@@ -11,7 +11,7 @@ theme:
 
 nav:
     - Home: index.md
-    - Dotnet Core: /dotnet_core/index.md  
+    - Dotnet Core: /dotnet_core/
 
 markdown_extensions:
     - toc:

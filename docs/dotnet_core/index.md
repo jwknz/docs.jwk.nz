@@ -1,3 +1,3 @@
 # Dotnet Core
 
-* [SQLSVR WEB API](/SQLSVR_WEBAPI)
+* [SQLSVR WEB API](/dotnet_core/SQLSVR_WEBAPI)

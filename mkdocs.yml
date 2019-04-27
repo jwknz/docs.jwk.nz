@@ -1,22 +1,47 @@
 site_name: docs.jwk.nz
+site_description: Documentation for repositories that I have made
+site_author: Jeffrey Kranenburg
+site_url: https://docs.jwk.nz/
+
+repo_name: jwknz/docs.jwk.nz
+repo_url: https://github.com/jwknz/docs.jwk.nz
+edit_uri: ""
+
 theme:
-    name: readthedocs
-    highlightjs: true
-    hljs_languages:
-        - yaml
-        - javascript
-        - c#
-        - html
-        - json
+    name: material
+    font:
+        text: Roboto
+        code: Roboto Mono
 
 nav:
     - Home: index.md
     - Dotnet Core: /dotnet_core/
 
 markdown_extensions:
-    - toc:
-        permalink: 
-    - admonition
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
 copyright: Copyright &copy; 2019 and maintained by <a href="https://twitter.com/jwknz">Jeff Kranenburg</a>
 

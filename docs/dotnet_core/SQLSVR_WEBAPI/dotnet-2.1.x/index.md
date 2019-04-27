@@ -42,11 +42,8 @@ Type in `dotnet --list-sdks` to check what versions of dotnet core you have inst
     ```
 
 !!! tip
-    You can find all of the dotnet core sdks [here][1]  
-    But for this tutorial we are working with [this][2] version.
-
-    [1]: https://dotnet.microsoft.com/download/dotnet-core
-    [2]: https://dotnet.microsoft.com/download/dotnet-core/2.1
+    You can find all of the dotnet core sdks [here](https://dotnet.microsoft.com/download/dotnet-core)
+    But for this tutorial we are working with [this](https://dotnet.microsoft.com/download/dotnet-core/2.1) version.
 
 For this tutorial we are going to focus on version **2.1.x**
 

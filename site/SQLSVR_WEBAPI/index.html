@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Create a new project - My Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Create a new project";
+    var mkdocs_page_input_path = "SQLSVR_WEBAPI/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c#.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/html.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">SQLSVR WEBAPI</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Create a new project</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#create-a-new-project">Create a new project</a></li>
+    
+
+    <li class="toctree-l3"><a href="#setup-your-docker-environment">Setup your docker environment</a></li>
+    
+
+    <li class="toctree-l3"><a href="#setup-ef">SETUP EF</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>SQLSVR WEBAPI &raquo;</li>
+        
+      
+    
+    <li>Create a new project</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="create-a-new-project">Create a new project</h1>
+<p>Not all of these steps are required, they are useful and they help you build a good API - so treat them as if they are all required.</p>
+<ul>
+<li>
+<p>Run <code>git init &lt;projectname&gt;</code> to create a working directory with a git repository</p>
+</li>
+<li>
+<p>Go into the folder by typting in <code>cd &lt;projectname&gt;</code></p>
+</li>
+<li>
+<p>Run <code>dotnet --list-sdks</code> to check what versions of dotnet core you have installed on your machine.</p>
+</li>
+<li>
+<p>Run <code>dotnet new global</code> to create a <strong>global.json</strong> file that you can </p>
+</li>
+<li>
+<p>Run <code>dotnet new webapi</code> to create a new webapi project</p>
+</li>
+<li>
+<p>Add a <strong>.gitignore</strong> file</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adding a <strong>.gitignore</strong> file makes sure that you only commit the code that you need to commit. You will still have some details related to your setup that are important - like your database connection string (which we will get to later), so make sure that you write those down somewhere* </p>
+</div>
+<p>Download the <strong>.gitignore</strong> file from the link below and paste into your project.</p>
+<pre><code>https://raw.githubusercontent.com/dotnet/core/master/.gitignore
+</code></pre>
+
+<ul>
+<li>
+<p>Run the base project by typing in <code>dotnet run</code> and view your site by going to <a href="http://localhost:5000/api/values">http://localhost:5000/api/values</a></p>
+</li>
+<li>
+<p>Do an initial commit to your repository <code>git add .</code> &amp;&amp; <code>git commit -m "Initial Commit"</code></p>
+</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Making regular commits allows you to revert back to previous version of your code if you make an error.</p>
+</div>
+<h1 id="setup-your-docker-environment">Setup your docker environment</h1>
+<p>Download SQL Server based on ubuntu</p>
+<pre><code>docker pull mcr.microsoft.com/mssql/server:2017-latest-ubuntu 
+</code></pre>
+
+<p>Run your database on your machine</p>
+<pre><code>docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(*)Password' -e 'MSSQL_PID=Express' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu 
+</code></pre>
+
+<h1 id="setup-ef">SETUP EF</h1>
+<p>Entity Framework is part of the .net family and allows for super easy integration of a database to an application, may it be web based or otherwise.</p>
+<p>There are 2 approaches you can take: 1) Code First or 2) Data First.
+Since we already have a database, let's look st the Data First option.</p>
+<p>Copy the <code>ItemGroup</code> tag below and paste it in the <strong>.csproj</strong> file of your project. Run <code>dotnet restore</code> to install the nuget packages.</p>
+<p><em>Note: These packages are aligned to work with dotnet core 2.1.x, so these will need to be updated if you are using a newer version.</em></p>
+<pre><code>  &lt;ItemGroup&gt;
+    &lt;PackageReference Include=&quot;Microsoft.AspNetCore.App&quot; /&gt;
+    &lt;PackageReference Include=&quot;Microsoft.AspNetCore.Razor.Design&quot; Version=&quot;2.1.2&quot; PrivateAssets=&quot;All&quot; /&gt;
+    &lt;PackageReference Include=&quot;Microsoft.EntityFrameworkCore&quot; Version=&quot;2.1.1&quot; /&gt;
+    &lt;PackageReference Include=&quot;Microsoft.EntityFrameworkCore.SqlServer&quot; Version=&quot;2.1.1&quot; /&gt;
+    &lt;PackageReference Include=&quot;Microsoft.EntityFrameworkCore.SqlServer.Design&quot; Version=&quot;1.1.6&quot; /&gt;
+    &lt;PackageReference Include=&quot;Microsoft.EntityFrameworkCore.Tools&quot; Version=&quot;2.1.1&quot;&gt;
+      &lt;IncludeAssets&gt;runtime; build; native; contentfiles; analyzers&lt;/IncludeAssets&gt;
+      &lt;PrivateAssets&gt;all&lt;/PrivateAssets&gt;
+    &lt;/PackageReference&gt;
+  &lt;/ItemGroup&gt;
+</code></pre>
+
+<p>Create a folder called <strong>Models</strong> and then run this command to have it create all the models for you.</p>
+<p><em>Note: You will need to change the credentials to suit your setup.</em></p>
+<pre><code>dotnet ef dbcontext scaffold &quot;Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;&quot; Microsoft.EntityFrameworkCore.SqlServer -o Models -f -c Rugby7Context 
+</code></pre>
+
+<pre><code>Environment=&quot;ASPNETCORE_ENVIRONMENT=Development&quot; &quot;ConnectionStrings__Development='Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;'&quot;
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

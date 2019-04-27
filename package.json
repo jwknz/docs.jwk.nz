@@ -1,0 +1,30 @@
+{
+  "name": "docs",
+  "version": "1.0.1",
+  "description": "Documentation for repositories that I have made",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "mkdocs serve",
+    "deploy": "mkdocs build && npm version patch --no-git-tag-version && git add -A && git commit -m 'Updated Site' && git push origin master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwknz/docs.jwk.nz.git"
+  },
+  "keywords": [
+    "jwknz",
+    "docs",
+    "tutorials",
+    "code",
+    "howto"
+  ],
+  "author": "Jeff Kranenburg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwknz/docs.jwk.nz/issues"
+  },
+  "homepage": "https://github.com/jwknz/docs.jwk.nz#readme"
+}

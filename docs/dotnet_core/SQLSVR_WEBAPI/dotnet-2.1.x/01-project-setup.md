@@ -224,3 +224,5 @@ Create a folder called **Models** and then run this command to have it create al
 
 !!! success
     So now that the database and models are setup, we are able to get to coding the API.
+
+We will look at setting up the api controllers in the [next section](/dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/02-create-api)

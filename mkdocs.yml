@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: docs.jwk.nz
 theme:
     name: readthedocs
     highlightjs: true
@@ -9,6 +9,17 @@ theme:
         - html
         - json
 
+nav:
+    - Home: index.md
+    - Dotnet Core: /dotnet_core/index.md  
+
 markdown_extensions:
+    - toc:
+        permalink: 
     - admonition
+
+copyright: Copyright &copy; 2019 and maintained by <a href="https://twitter.com/jwknz">Jeff Kranenburg</a>
+
+plugins:
+    - search
         

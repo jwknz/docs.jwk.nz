@@ -9,4 +9,4 @@ I have broken them into the sections based on frameworks.
 
 # DOTNET CORE
 
-* [SQLSVR WEB API](/dotnet_core/sqlsvr_webapi/dotnet-2.1.x/)
+* [SQLSVR WEB API](/dotnet_core/sqlsvr_webapi/dotnet-2.1.x/01-project-setup)

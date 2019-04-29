@@ -20,7 +20,7 @@ nav:
         - Welcome: /dotnet_core/SQLSVR_WEBAPI/
         - Part 1 - Setup: /dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/01-project-setup/
         - Part 2 - The API: /dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/02-create-api/
-        - Part 3 - Exercise: /dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/03-exercise/
+        - Part 3 - Exercise: /dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/03-exercises/
 
 markdown_extensions:
   - markdown.extensions.admonition

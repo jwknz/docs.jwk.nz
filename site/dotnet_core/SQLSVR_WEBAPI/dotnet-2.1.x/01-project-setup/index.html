@@ -450,7 +450,7 @@ But for this tutorial we are working with <a href="https://dotnet.microsoft.com/
 <div class="codehilite"><pre><span></span>docker run -e &#39;ACCEPT_EULA=Y&#39; -e &#39;SA_PASSWORD=yourStrong(*)Password&#39; -e &#39;MSSQL_PID=Express&#39; -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu 
 </pre></div>
 
-<p>The passwork is set to <code>yourStrong(*)Password</code> which is the default password with the ! changed into an * - needless to say, you should probably change this, but it would be bad if I document my passwords here :-)</p>
+<p>The password is set to <code>yourStrong(*)Password</code> which is the default password with the ! changed into an * - needless to say, you should probably change this, but it would be bad if I document my passwords here :-)</p>
 <p>Once that you have run that command, you mssql server is up and running, so let's leave that sitting there for the moment.</p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
@@ -520,7 +520,7 @@ code &lt;projectname&gt;
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You will need to change the credentials to suit your setup.
-The DB Context is related to the sql files above, this woudl obviously be different if you are working on your own project.</p>
+The DB Context is related to the sql files above, this would obviously be different if you are working on your own project.</p>
 <div class="codehilite"><pre><span></span>dotnet ef dbcontext scaffold &quot;
 Server=localhost;
 Database=Rugby7db;
@@ -529,6 +529,19 @@ Password=yourStrong(*)Password;&quot; Microsoft.EntityFrameworkCore.SqlServer -o
 </pre></div>
 
 </div>
+<p>In your <strong>startup.cs</strong> file, add this as your connection string </p>
+<div class="codehilite"><pre><span></span>Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;
+</pre></div>
+
+<p>In the <code>ConfigureServices</code> under the <code>services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);</code> line paste this:</p>
+<div class="codehilite"><pre><span></span>// Connect to DB
+string connection = &quot;ConnectionString&quot;: &quot;Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;&quot;;
+
+services.AddDbContext&lt;Rugby7Context&gt;(options =&gt; options
+        .UseSqlServer(connection)
+);
+</pre></div>
+
 <div class="admonition success">
 <p class="admonition-title">Success</p>
 <p>So now that the database and models are setup, we are able to get to coding the API.</p>

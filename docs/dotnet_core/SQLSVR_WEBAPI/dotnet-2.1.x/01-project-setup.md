@@ -113,7 +113,7 @@ After the download is complete type in:
 docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(*)Password' -e 'MSSQL_PID=Express' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu 
 ```
 
-The passwork is set to `yourStrong(*)Password` which is the default password with the ! changed into an * - needless to say, you should probably change this, but it would be bad if I document my passwords here :-)
+The password is set to `yourStrong(*)Password` which is the default password with the ! changed into an * - needless to say, you should probably change this, but it would be bad if I document my passwords here :-)
 
 Once that you have run that command, you mssql server is up and running, so let's leave that sitting there for the moment.
 
@@ -209,7 +209,7 @@ Create a folder called **Models** and then run this command to have it create al
 
 !!! note
     You will need to change the credentials to suit your setup.
-    The DB Context is related to the sql files above, this woudl obviously be different if you are working on your own project.
+    The DB Context is related to the sql files above, this would obviously be different if you are working on your own project.
 
     ```
     dotnet ef dbcontext scaffold "
@@ -218,6 +218,23 @@ Create a folder called **Models** and then run this command to have it create al
     User=sa;
     Password=yourStrong(*)Password;" Microsoft.EntityFrameworkCore.SqlServer -o Models -f -c Rugby7Context 
     ```
+
+In your **startup.cs** file, add this as your connection string 
+
+```
+Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;
+```
+
+In the `ConfigureServices` under the `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);` line paste this:
+
+```
+// Connect to DB
+string connection = "ConnectionString": "Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;";
+
+services.AddDbContext<Rugby7Context>(options => options
+        .UseSqlServer(connection)
+);
+```
 
 !!! success
     So now that the database and models are setup, we are able to get to coding the API.

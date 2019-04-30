@@ -59,5 +59,25 @@ The **www** folder serves as the root folder of your website. So that is where y
 
 You can now open the www in your favourite code editor. (for example `code www`)
 
+Next you will need to install composer which you can do here:
+
+!!! note "Download for windows"
+    [Composer for Windows](https://getcomposer.org/Composer-Setup.exe)
+
+!!! note "Download for Mac"
+
+    Copy each of these lines into your terminal
+   
+    ```
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    
+    php -r "if (hash_file('sha384', 'composer-setup.php') === '48e3236262b34d30969dca3c37281b3b4bbe3221bda826ac6a9a62d6444cdb0dcd0615698a5cbe587c3f0fe57a54d8f5') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+    
+    php composer-setup.php
+    
+    php -r "unlink('composer-setup.php');"
+    ```
+
+
 !!! note
     The container has been setup with the apache2 rewrite module enabled. This will be important when we start using MVC.

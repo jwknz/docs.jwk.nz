@@ -39,6 +39,8 @@ A lot happens in the command above, so if you want to know what it does, click o
 
     `cd .. && rm -rf php-mvc-kit-master && rm -rf master.zip`
 
+Once the framework has been downloaded type in `composer update` and wait while some plugins are installed.
+
 ## Setup your git repository
 
 !!! note "Setup Git"

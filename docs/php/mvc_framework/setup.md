@@ -1,4 +1,4 @@
-# Setup MVC Project
+## Setup MVC Project
 
 !!! note "What you need"
     This repository should be loaded in the **www** folder if you are using the [https://github.com/to-jk11/php-container-kit/](https://github.com/to-jk11/php-container-kit/) repository
@@ -63,7 +63,9 @@ A lot happens in the command above, so if you want to know what it does, click o
 
     The link "https://url-to-your-repo" is the link to your github repository
 
-Now you can go to [http://localhost:8000](// If you are using https and have a private repository (uses port 443)
-    git remote add origin https://token@username:url-to-your-repo) (docker for (your OS)) or [http://192.168.99.100:8000](http://192.168.99.100:8000) (docker toolbox in combination with VirtualBox) and you will see the following message:
+Now you can go to [http://localhost:8000](http://localhost:8000) (docker for (your OS)) or [http://192.168.99.100:8000](http://192.168.99.100:8000) (docker toolbox in combination with VirtualBox) and you will see the following screen:
 
-> Note you will now need to load your sql files to see the website working properly
+![php-no-model](../../images/php-no-model.png)
+
+!!! note
+    When using Docker Toolbox for windows, the URL will be [http://192.168.99.100:8000](http://192.168.99.100:8000)

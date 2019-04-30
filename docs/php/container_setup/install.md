@@ -1,5 +1,10 @@
 # Setup new container
 
+!!! danger "IF YOU ARE USING DOCKER-TOOLBOX FOR WINDOWS"
+    For Docker Toolbox for Windows to be able to share it's files with the host machine to the container, the container **MUST** be placed inside the **`C:\Users\**`** folder.
+
+    So create a folder called `docker` inside `C:\Users\<your username>\` otherwise you cannot make this work.
+
 !!! warning "important"
     Stop any current containers you have going this will free up the ports that are in use:
 
@@ -11,9 +16,13 @@
 
 Navigate to your code folder where you want to store you project, this could be your desktop or a designated folder.
 
-``` bash
-cd ~/Desktop
-```
+!!! note ""
+    ``` bash
+    cd ~/Desktop
+
+    // **REMEMBER IF YOU ARE USING DOCKER TOOLBOX FOR WINDOWS**
+    cd /c/Users/<username>/docker
+    ```
 
 Set a ENV Variable temporary for the folder name
 
@@ -26,18 +35,25 @@ Set a ENV Variable temporary for the folder name
 
 Download the **docker-compose** file
 
-``` bash
-curl -LOk https://github.com/to-jk11/php-container-kit/archive/master.zip && unzip master.zip && rm -f  master.zip && mv php-container-kit-master $FOLDER && mkdir -p $FOLDER/www
-```
+!!! note ""
+    ``` bash
+    curl -LOk https://github.com/to-jk11/php-container-kit/archive/master.zip && unzip master.zip && rm -f  master.zip && mv php-container-kit-master $FOLDER && mkdir -p $FOLDER/www
+    ```
 
 Go into the `<VALUE>` folder:
 
-`cd $FOLDER`
+!!! note ""
+    ```
+    cd $FOLDER
+    ```
 
 Inside the folder there is a `docker-compose.yml` file.
 Run the docker-compose command to get your containers up and running:
 
-`docker-compose up -d`
+!!! note ""
+    ```
+    docker-compose up -d
+    ```
 
 The **www** folder serves as the root folder of your website. So that is where you put your code files.
 

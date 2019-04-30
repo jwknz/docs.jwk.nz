@@ -5,22 +5,33 @@ site_url: https://docs.jwk.nz/
 
 repo_name: jwknz/docs.jwk.nz
 repo_url: https://github.com/jwknz/docs.jwk.nz
-edit_uri: ""
+edit_uri: 'edit/master/docs/'
 
 theme:
+    docs_dir: docs
     name: material
     font:
         text: Roboto
         code: Roboto Mono
+    palette:
+        primary: 'blue'
+        accent: 'red'
+    # feature:
+    #     tabs: 'true'
 
 nav:
     - Home: index.md
     - Dotnet Core: /dotnet_core/
-    - MSSQL SERVER WEB API:
+    - Dotnet WEB API:
         - Welcome: /dotnet_core/SQLSVR_WEBAPI/
         - Part 1 - Setup: /dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/01-project-setup/
         - Part 2 - The API: /dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/02-create-api/
         - Part 3 - Exercise: /dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/03-exercises/
+    - PHP:
+        - Setup Docker Container: /php/container_setup/install/
+        - Setup MVC Framework: /php/mvc_framework/setup/
+        - Folder Structure: /php/mvc_framework/how-it-works/
+        - How MVC Works: /php/mvc_framework/mvc/
 
 markdown_extensions:
   - markdown.extensions.admonition
@@ -29,8 +40,12 @@ markdown_extensions:
   - markdown.extensions.def_list
   - markdown.extensions.footnotes
   - markdown.extensions.meta
+  - markdown.extensions.sane_lists
+  - markdown.extensions.meta
+  - markdown.extensions.tables
   - markdown.extensions.toc:
-      permalink: true
+      permalink: True
+      separator: "_"
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -52,4 +67,17 @@ copyright: Copyright &copy; 2019 and maintained by <a href="https://twitter.com/
 
 plugins:
     - search
-        
+
+extra:
+    social:
+    - type: 'github'
+      link: 'https://github.com/jwknz'
+    - type: 'github'
+      link: 'https://github.com/to-jk11'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/in/jwknz'
+    - type: 'twitter'
+      link: 'https://twitter.com/jwknz'
+
+#extra_javascript:
+#    - './scripts/external_links.js'

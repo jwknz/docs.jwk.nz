@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation for repositories that I have made">
       
       
-        <link rel="canonical" href="https://docs.jwk.nz/dotnet_core/">
+        <link rel="canonical" href="https://docs.jwk.nz/php/mvc_framework/">
       
       
         <meta name="author" content="Jeffrey Kranenburg">
@@ -37,7 +37,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.01ccdecf.js"></script>
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
@@ -66,7 +66,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#dotnet_core" tabindex="1" class="md-skip">
+      <a href="#basic_mvc_framework" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -133,7 +133,7 @@
               docs.jwk.nz
             </span>
             <span class="md-header-nav__topic">
-              Dotnet Core
+              Basic MVC Framework
             </span>
           
         </div>
@@ -243,7 +243,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -506,6 +506,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick_use" title="Quick use:" class="md-nav__link">
+    Quick use:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_containers" title="Docker containers" class="md-nav__link">
+    Docker containers
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -516,13 +539,81 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/jwknz/docs.jwk.nz/edit/master/docs/dotnet_core/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/jwknz/docs.jwk.nz/edit/master/docs/php/mvc_framework/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="dotnet_core">Dotnet Core<a class="headerlink" href="#dotnet_core" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="/dotnet_core/SQLSVR_WEBAPI">SQLSVR WEB API</a></li>
-</ul>
+                <h1 id="basic_mvc_framework">Basic MVC Framework<a class="headerlink" href="#basic_mvc_framework" title="Permanent link">&para;</a></h1>
+<p>This MVC framework is written in PHP and is based on an opensource framework by <a href="http://traversymedia.com">Brad Traversy</a> </p>
+<h2 id="quick_use">Quick use:<a class="headerlink" href="#quick_use" title="Permanent link">&para;</a></h2>
+<p>You can use this framework in 2 ways:</p>
+<ol>
+<li>
+<p>Full PHP MVC =&gt; Views are written in here and saved in the app/views folder.</p>
+</li>
+<li>
+<p>Partial PHP MVC (Only Model and Controller) =&gt; The controller has api endpoints which output JSON data and the Views are written in another language. Could even be hosted in another container or server. This would purely serve as the backend.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Requirements" tab="macoS</p>
+<p>This setup uses php composer and that can be installed in the following way:</p>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">macoS</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># Install homebrew (https://brew.sh) (if you haven&#39;t already)</span>
+/usr/bin/ruby -e <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="c1"># Install composer</span>
+brew install composer
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">windows</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span># Install chocolatey (https://chocolatey.org) (if you haven&#39;t already)
+# Run this command in the CMD.exe (Command Prompt) with administrator priviledges
+
+@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;
+
+# OR
+
+# Run this command in Powershell with administrator priviledges
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))
+
+# Install composer
+chocolatey install composer -y
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_2" />
+<label for="__tab_1_2">linux (using apt-get)</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># linux already comes with a package manager (apt-get), so just type in the following</span>
+
+sudo apt update
+sudo apt install curl php-cli php-mbstring git unzip
+<span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> curl -sS https://getcomposer.org/installer -o composer-setup.php
+sudo php composer-setup.php --install-dir<span class="o">=</span>/usr/local/bin --filename<span class="o">=</span>composer
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_3" />
+<label for="__tab_1_3">linux (using homebrew)</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># install homebrew in your homedirectory</span>
+
+sh -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="nb">test</span> -d ~/.linuxbrew <span class="o">&amp;&amp;</span> <span class="nb">eval</span> <span class="k">$(</span>~/.linuxbrew/bin/brew shellenv<span class="k">)</span>
+<span class="nb">test</span> -d /home/linuxbrew/.linuxbrew <span class="o">&amp;&amp;</span> <span class="nb">eval</span> <span class="k">$(</span>/home/linuxbrew/.linuxbrew/bin/brew shellenv<span class="k">)</span>
+<span class="nb">test</span> -r ~/.bash_profile <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;eval \$(</span><span class="k">$(</span>brew --prefix<span class="k">)</span><span class="s2">/bin/brew shellenv)&quot;</span> &gt;&gt;~/.bash_profile
+<span class="nb">echo</span> <span class="s2">&quot;eval \$(</span><span class="k">$(</span>brew --prefix<span class="k">)</span><span class="s2">/bin/brew shellenv)&quot;</span> &gt;&gt;~/.profile
+
+<span class="c1"># Install composer</span>
+brew install composer
+</pre></div></div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>After you install 1 or more programs in the command line, it always pays to restart your terminal to refresh all the PATH variables</p>
+</div>
+<h2 id="docker_containers">Docker containers<a class="headerlink" href="#docker_containers" title="Permanent link">&para;</a></h2>
+<p>This repository <strong>does not</strong> include the docker-compose file to setup a LAMP stack. <a href="/php/container_setup/install/">You can find those instructions here</a> </p>
+<p>Note that the credentials that are stored in this repository for the LAMP stack refer to the docker setup in that link. However you are free to change those to what you require.</p>
                 
                   
                 
@@ -556,7 +647,7 @@
       </div>
       
   <div class="md-footer-social">
-    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/jwknz" class="md-footer-social__link fa fa-github"></a>
     
@@ -574,9 +665,9 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.267712eb.js"></script>
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
   </body>

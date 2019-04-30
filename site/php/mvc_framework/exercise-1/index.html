@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation for repositories that I have made">
       
       
-        <link rel="canonical" href="https://docs.jwk.nz/php/php_basics/">
+        <link rel="canonical" href="https://docs.jwk.nz/php/mvc_framework/exercise-1/">
       
       
         <meta name="author" content="Jeffrey Kranenburg">
@@ -37,18 +37,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
-        <title>docs.jwk.nz</title>
+        <title>Creating your first MVC Project - docs.jwk.nz</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.3020aac5.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+      <script src="../../../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
@@ -66,7 +66,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
     
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#coming_soon" tabindex="1" class="md-skip">
+      <a href="#creating_your_first_mvc_project" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -133,7 +133,7 @@
               docs.jwk.nz
             </span>
             <span class="md-header-nav__topic">
-              COMING SOON...
+              Creating your first MVC Project
             </span>
           
         </div>
@@ -243,7 +243,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href="../../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -530,6 +530,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting_up_your_project" title="Setting up your project" class="md-nav__link">
+    Setting up your project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating_a_controller" title="Creating a controller" class="md-nav__link">
+    Creating a controller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating_the_model" title="Creating the model" class="md-nav__link">
+    Creating the model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding_the_model_to_the_controller" title="Adding the model to the controller" class="md-nav__link">
+    Adding the model to the controller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#displaying_the_model_in_the_view" title="Displaying the model in the view" class="md-nav__link">
+    Displaying the model in the view
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -540,10 +584,155 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/jwknz/docs.jwk.nz/edit/master/docs/php/php_basics/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/jwknz/docs.jwk.nz/edit/master/docs/php/mvc_framework/exercise-1.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="coming_soon">COMING SOON...<a class="headerlink" href="#coming_soon" title="Permanent link">&para;</a></h1>
+                <h1 id="creating_your_first_mvc_project">Creating your first MVC Project<a class="headerlink" href="#creating_your_first_mvc_project" title="Permanent link">&para;</a></h1>
+<p>In this exercise you are going to create your first MVC project.</p>
+<p>It will include a SQL file, so you don't need to write the code for that.</p>
+<div class="admonition note">
+<p class="admonition-title">What you need</p>
+<p>For this exercise I will assume you are working with the following tools:</p>
+<ul>
+<li>VSCODE</li>
+<li>Docker (toolbox or native)</li>
+<li>Web Browser (Chrome)</li>
+<li>Git (bash or on a native terminal)</li>
+</ul>
+<p>We will make use of the following VSCode Extensions<br />
+You can install these by typing in <code>code --install-extension</code> followed by the name after the colon listed below</p>
+<ul>
+<li>MySQL: <code>formulahendry.vscode-mysql</code></li>
+<li>Docker: <code>peterjausovec.vscode-docker</code></li>
+<li>Docker-Compose: <code>p1c2u.docker-compose</code></li>
+<li>Browser Preview: <code>auchenberg.vscode-browser-preview</code></li>
+</ul>
+<p>You will also need to be familiar with the documentation in this section.</p>
+<ul>
+<li><a href="/php/container_setup/install/">Part 1 - Setup Docker Container</a></li>
+<li><a href="/php/mvc_framework/setup/">Part 2 - Setup MVC Framework</a></li>
+<li><a href="/php/mvc_framework/how-it-works/">Part 3 - Folder Structure</a></li>
+<li><a href="/php/mvc_framework/mvc/">Part 4 - How MVC Works</a></li>
+</ul>
+</div>
+<p>Let's get started!</p>
+<h2 id="setting_up_your_project">Setting up your project<a class="headerlink" href="#setting_up_your_project" title="Permanent link">&para;</a></h2>
+<p>Create a project named MVCEX01</p>
+<p>Once you have that in place, the outcome should be that you have a folder called <strong>MVCEX01</strong> and in the <strong>www</strong> should be the app and public folder structure from the second <code>curl</code> command.</p>
+<p>Make sure you have the <strong>.env</strong> file loaded correctly, so that you see the following text on your screen:</p>
+<p><code>Model does not exists</code></p>
+<p>At this point you should also have a git repository setup and made your first commit and have it pushed to github.</p>
+<p>The workflow above is standard for every project when using frameworks. So if this something that takes you a lot of time, then keep doing it until it becomes part of your project workflow.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>In your www folder there is a folder called <strong>.demo</strong> and this folder has complete working files that make up MVC scenarios.</p>
+</div>
+<h2 id="creating_a_controller">Creating a controller<a class="headerlink" href="#creating_a_controller" title="Permanent link">&para;</a></h2>
+<p>Create a controller file called <strong>People.php</strong> and place it in the <strong>Controllers</strong> folder</p>
+<p>Add the basic layout for the controller into that folder.</p>
+<div class="admonition note">
+<div class="codehilite"><pre><span></span>&lt;?php
+
+include(APPROOT . &#39;/helper/helperfunctions.php&#39;);
+
+class People extends Controller {
+
+}
+
+?&gt;
+</pre></div>
+
+<p>The <strong>APPROOT</strong> is a constant that points the webserver to the <strong>app</strong> folder. You can see its definition in the <strong>startup.php</strong> file located in the <strong>helper</strong> folder.</p>
+<p>As you may remember from the Controller explaination, the People controller inherits some content from the <strong>Controller</strong> class</p>
+</div>
+<p>In the <strong>People</strong> controller file we are going to add an action. Actions are normal functions and they hold the content that comes in from the model and send the content to the view.</p>
+<p>Let's create a simple Index action to begin with:</p>
+<div class="admonition note">
+<div class="codehilite"><pre><span></span>public function index() {
+    return $this-&gt;view(&#39;people/view1&#39;, $data = []);
+}
+</pre></div>
+
+</div>
+<p>If you now navigate to <a href="http://localhost:8000/People">http://localhost:8000/People</a> (or <a href="http://192.168.99.100:8000/People">http://192.168.99.100:8000/People</a>) your webpage, you should see the message:</p>
+<p><strong>View does not exists</strong></p>
+<p><img alt="view-does-not-exist" src="../../../assets/images/view-does-not-exist.png" /></p>
+<p>(For the attention to detail people, I am running my server temporarily on port 9000, but everything else works the same)</p>
+<p>In the views folder create a folder called people and inside of that create a file called called <strong>view1.php</strong> .</p>
+<p>In the <strong>view1.php</strong> file, just write </p>
+<div class="codehilite"><pre><span></span>&lt;h1&gt;Hello View1&lt;/h1&gt;
+</pre></div>
+
+<p>and save the file. After refreshing the page you should now see this:</p>
+<p><img alt="view1-temp" src="../../../assets/images/view1-temp.png" /></p>
+<h2 id="creating_the_model">Creating the model<a class="headerlink" href="#creating_the_model" title="Permanent link">&para;</a></h2>
+<p>Inside of the class need to point to a model, since we are going to be using a database. So for now, just create a file called <strong>_People.php</strong> (Note the underscore) inside of the Models folder.</p>
+<p>In the People Controller add this piece of code, above the index action.</p>
+<div class="admonition note">
+<p class="admonition-title">Class contructor</p>
+<div class="codehilite"><pre><span></span>public function __construct() {
+    $this-&gt;people = $this-&gt;model(&#39;_People&#39;);
+}
+</pre></div>
+
+</div>
+<p>At this stage, if you refresh the page, you will see that you have an error that says it can't find the model class.</p>
+<p>In the <strong>_People.php</strong> file, add the base code for a model which is:</p>
+<div class="admonition note">
+<p class="admonition-title">Base Model</p>
+<div class="codehilite"><pre><span></span>&lt;?php
+
+    class _People {
+
+        public function title() {
+            return &quot;View1 title loaded from a model&quot;;
+        }
+    }
+?&gt;
+</pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Your class name MUST BE the same name as the file name, as the system looks for both.</p>
+</div>
+</div>
+<p>In the model above you can see that we have created a function for the title.</p>
+<p>Let's add that to our controller.</p>
+<h2 id="adding_the_model_to_the_controller">Adding the model to the controller<a class="headerlink" href="#adding_the_model_to_the_controller" title="Permanent link">&para;</a></h2>
+<p>Update the index action to look like this:</p>
+<div class="admonition note">
+<p class="admonition-title">Updated index action</p>
+<div class="codehilite"><pre><span></span>public function index() {
+
+  $title = $this-&gt;people-&gt;title();
+
+  $data = [
+    &#39;title&#39; =&gt; $title
+  ];
+
+  return $this-&gt;view(&#39;people/view1&#39;, $data);
+}
+</pre></div>
+
+</div>
+<p>Next we need to reference that <code>$title</code> variable in the view.</p>
+<h2 id="displaying_the_model_in_the_view">Displaying the model in the view<a class="headerlink" href="#displaying_the_model_in_the_view" title="Permanent link">&para;</a></h2>
+<p>Open up the <strong>view1.php</strong> and replace the current code with this code:</p>
+<div class="admonition note">
+<p class="admonition-title">Loading the view</p>
+<div class="codehilite"><pre><span></span>&lt;?php
+
+    echo &#39;&lt;h1&gt;&#39;.$data[&#39;title&#39;].&#39;&lt;/h1&gt;&#39;;
+</pre></div>
+
+<p>In the code above we type in our HTML code - HTML code is never typed in the model, but only in the view.</p>
+<p>The fullstop is the php character to concatenate strings.</p>
+<p>As you can see we are adding the <code>$data</code> associative array (which is also called a dictionary) and use the key that was set in the controller to access the data.
+In this case <code>$data['title']</code> is just a string, so it is pretty easy.</p>
+</div>
+<p>You should now see this:</p>
+<p><img alt="view1-displaying-model" src="../../../assets/images/view1-displaying-model.png" /></p>
+<p>In <a href="/php/mvc_framework/exercise-2">exercise 2</a> we will add data from the database to the view.</p>
                 
                   
                 
@@ -577,7 +766,7 @@
       </div>
       
   <div class="md-footer-social">
-    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/jwknz" class="md-footer-social__link fa fa-github"></a>
     
@@ -595,9 +784,9 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.267712eb.js"></script>
+      <script src="../../../assets/javascripts/application.267712eb.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
     
   </body>

@@ -486,6 +486,24 @@ Run the docker-compose command to get your containers up and running:</p>
 </div>
 <p>The <strong>www</strong> folder serves as the root folder of your website. So that is where you put your code files.</p>
 <p>You can now open the www in your favourite code editor. (for example <code>code www</code>)</p>
+<p>Next you will need to install composer which you can do here:</p>
+<div class="admonition note">
+<p class="admonition-title">Download for windows</p>
+<p><a href="https://getcomposer.org/Composer-Setup.exe">Composer for Windows</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Download for Mac</p>
+<p>Copy each of these lines into your terminal</p>
+<div class="codehilite"><pre><span></span>php -r &quot;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&quot;
+
+php -r &quot;if (hash_file(&#39;sha384&#39;, &#39;composer-setup.php&#39;) === &#39;48e3236262b34d30969dca3c37281b3b4bbe3221bda826ac6a9a62d6444cdb0dcd0615698a5cbe587c3f0fe57a54d8f5&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&quot;
+
+php composer-setup.php
+
+php -r &quot;unlink(&#39;composer-setup.php&#39;);&quot;
+</pre></div>
+
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The container has been setup with the apache2 rewrite module enabled. This will be important when we start using MVC.</p>

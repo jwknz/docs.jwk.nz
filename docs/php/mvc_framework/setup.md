@@ -41,6 +41,8 @@ A lot happens in the command above, so if you want to know what it does, click o
 
 Once the framework has been downloaded type in `composer update` and wait while some plugins are installed.
 
+NOTE: use `php composer.phar` if you are on a mac.
+
 ## Setup your git repository
 
 !!! note "Setup Git"

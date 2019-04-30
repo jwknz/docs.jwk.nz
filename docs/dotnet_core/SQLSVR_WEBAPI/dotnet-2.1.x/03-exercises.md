@@ -9,6 +9,6 @@ The api is not complete, in the demo we looked at the player API, but we still h
 * Staff
 * Teams
 
-![Model Tables](images/models.png)
+![Model Tables](assets/images/models.png)
 
 Your task is to complete the api so data can be submitted using PostMan.

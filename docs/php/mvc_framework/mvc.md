@@ -2,7 +2,7 @@
 
 To know what we are working with, let's define what each of these files do.
 
-![MVC process](../../images/mvc-process.png)
+![MVC process](../../assets/images/mvc-process.png)
 
 As you can see in the image above, the user uses the a website, by navigating to it. Once they are on that website, the different pieces come together.
 
@@ -20,7 +20,7 @@ So by those rules that are shown above, the starting point for any page would be
 
 When you look at a url for a website you will see the following format:
 
-![MVC process](../../images/URL-Setup.png)
+![MVC process](../../assets/images/URL-Setup.png)
 
 * The default controller for this framework is called **Pages**
 * The default for index for this framework is called **Index**

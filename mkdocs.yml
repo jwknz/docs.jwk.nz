@@ -36,6 +36,8 @@ nav:
             - Part 2 - Setup MVC Framework: /php/mvc_framework/setup/
             - Part 3 - Folder Structure: /php/mvc_framework/how-it-works/
             - Part 4 - How MVC Works: /php/mvc_framework/mvc/
+            - EX 1 - Create MVC part 1: /php/mvc_framework/exercise-1/
+            - EX 2 - Create MVC part 2: /php/mvc_framework/exercise-2/
 
 markdown_extensions:
   - markdown.extensions.admonition

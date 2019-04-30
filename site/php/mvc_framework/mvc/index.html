@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation for repositories that I have made">
       
       
-        <link rel="canonical" href="https://docs.jwk.nz/php/mvc_framework/setup/">
+        <link rel="canonical" href="https://docs.jwk.nz/php/mvc_framework/mvc/">
       
       
         <meta name="author" content="Jeffrey Kranenburg">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Setup - docs.jwk.nz</title>
+        <title>Mvc - docs.jwk.nz</title>
       
     
     
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#setup_mvc_project" tabindex="1" class="md-skip">
+      <a href="#app_models_-_views_-_controllers" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -133,7 +133,7 @@
               docs.jwk.nz
             </span>
             <span class="md-header-nav__topic">
-              Setup
+              Mvc
             </span>
           
         </div>
@@ -424,15 +424,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup_mvc_project" title="Setup MVC Project" class="md-nav__link">
-    Setup MVC Project
+  <a href="#app_models_-_views_-_controllers" title="APP : Models - Views - Controllers" class="md-nav__link">
+    APP : Models - Views - Controllers
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup_your_git_repository" title="Setup your git repository" class="md-nav__link">
-    Setup your git repository
+  <a href="#the_url_format" title="THE URL Format" class="md-nav__link">
+    THE URL Format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the_controller" title="The Controller" class="md-nav__link">
+    The Controller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the_model" title="The Model" class="md-nav__link">
+    The Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the_view" title="The View" class="md-nav__link">
+    The View
   </a>
   
 </li>
@@ -453,77 +474,233 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/jwknz/docs.jwk.nz/edit/master/docs/php/mvc_framework/setup.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/jwknz/docs.jwk.nz/edit/master/docs/php/mvc_framework/mvc.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Setup</h1>
+                  <h1>Mvc</h1>
                 
-                <h2 id="setup_mvc_project">Setup MVC Project<a class="headerlink" href="#setup_mvc_project" title="Permanent link">&para;</a></h2>
+                <h2 id="app_models_-_views_-_controllers">APP : Models - Views - Controllers<a class="headerlink" href="#app_models_-_views_-_controllers" title="Permanent link">&para;</a></h2>
+<p>To know what we are working with, let's define what each of these files do.</p>
+<p><img alt="MVC process" src="../../../images/mvc-process.png" /></p>
+<p>As you can see in the image above, the user uses the a website, by navigating to it. Once they are on that website, the different pieces come together.</p>
+<p>The Controller is in a way the glue to the process and so a couple of things need to be remembered.</p>
+<ul>
+<li>The controller communicates to the model</li>
+<li>The controller communicates to the view</li>
+<li>The model <strong>NEVER</strong> communicates to the view.</li>
+<li>Whatever data the model has, is send to the controller</li>
+<li>Whatever view there is to display the data is selected by the controller.</li>
+</ul>
+<p>So by those rules that are shown above, the starting point for any page would be the controller.</p>
+<h2 id="the_url_format">THE URL Format<a class="headerlink" href="#the_url_format" title="Permanent link">&para;</a></h2>
+<p>When you look at a url for a website you will see the following format:</p>
+<p><img alt="MVC process" src="../../../images/URL-Setup.png" /></p>
+<ul>
+<li>The default controller for this framework is called <strong>Pages</strong></li>
+<li>The default for index for this framework is called <strong>Index</strong></li>
+<li>There is no default value for the parameter, since it only applies when you need a specific record for something.</li>
+</ul>
+<p>Now there are 2 ways you can set this up:</p>
+<p>You either create a tonne of controllers and give them each a single action or - and this is the way we will do it - you create a single controller for each function and give them each the appropriate methods in relation to the CRUD acronym.</p>
+<p>So each <strong>Controller</strong> will get at least a single actions with a maximum or 5 actions.</p>
+<h2 id="the_controller">The Controller<a class="headerlink" href="#the_controller" title="Permanent link">&para;</a></h2>
+<p>The format of a controller looks something like this to begin with:</p>
 <div class="admonition note">
-<p class="admonition-title">What you need</p>
-<p>This repository should be loaded in the <strong>www</strong> folder if you are using the <a href="https://github.com/to-jk11/php-container-kit/">https://github.com/to-jk11/php-container-kit/</a> repository</p>
-</div>
-<p>Download the following files into the www container</p>
-<div class="admonition tip">
-<p class="admonition-title">Get the MVC Framework</p>
-<div class="codehilite"><pre><span></span>curl -LOk https://github.com/to-jk11/php-mvc-kit/archive/master.zip &amp;&amp; unzip master.zip &amp;&amp; cd php-mvc-kit-master/ &amp;&amp; find . -maxdepth 1 -exec mv {} .. \; &amp;&amp; cd .. &amp;&amp; rm -rf php-mvc-kit-master &amp;&amp; rm -rf master.zip
+<p class="admonition-title">A basic controller</p>
+<div class="codehilite"><pre><span></span>&lt;?php
+    include(APPROOT . &#39;/helper/helperfunctions.php&#39;);
+
+    class Pages extends Controller {
+
+        public function __construct() {
+            $this-&gt;people = $this-&gt;model(&#39;People&#39;);
+        }
+
+        public function index() {
+            // Links to model
+            $people = $this-&gt;people-&gt;getAllPeople();
+            $title = $this-&gt;people-&gt;title();
+            $data = [];
+
+            // Send data to View
+            $this-&gt;view(&#39;pages/index&#39;, $data = []);
+        }
+    }
+?&gt;
 </pre></div>
 
 </div>
-<p>A lot happens in the command above, so if you want to know what it does, click on the hint below.</p>
-<details class="note"><summary>If you want to know what happens</summary><ul>
-<li>First we download the repostory that contains all the base code as a zip file</li>
-</ul>
-<div class="codehilite"><pre><span></span>curl -LOk https://github.com/to-jk11/php-mvc-kit/archive/master.zip
+<p>These are not auto-generated, but you can just copy this code and modify it to what you need.</p>
+<p>Let's break it up into parts:</p>
+<details class="note"><summary>Import the helper functions</summary><p>Import the helper functions so you can manipulate the URL</p>
+<div class="codehilite"><pre><span></span>include(APPROOT . &#39;/helper/helperfunctions.php&#39;);
 </pre></div>
 
-<ul>
-<li>Next we unzip the master.zip file, which gives us the <strong>php-mvc-kit-master</strong> folder</li>
-</ul>
-<div class="codehilite"><pre><span></span>cd php-mvc-kit-master
-</pre></div>
-
-<ul>
-<li>Then we move all of the files into the parent folder:</li>
-</ul>
-<div class="codehilite"><pre><span></span>`find . -maxdepth 1 -exec mv {} .. \;`
-</pre></div>
-
-<p>Ignore the message that says:</p>
-<blockquote>
-<p>mv: cannot move <code>.' to</code>../.': Device or resource busy</p>
-</blockquote>
-<ul>
-<li>Last we go back to the parent folder and remove the php-mvc-kit-master folder and the master.zip file</li>
-</ul>
-<p><code>cd .. &amp;&amp; rm -rf php-mvc-kit-master &amp;&amp; rm -rf master.zip</code></p>
 </details>
-<h2 id="setup_your_git_repository">Setup your git repository<a class="headerlink" href="#setup_your_git_repository" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Setup Git</p>
-<p>Next you will need to create your git repository so you can save your work:</p>
-<div class="codehilite"><pre><span></span>git init
+<details class="note"><summary>Create the contoller class</summary><p>Create the class - this name has to be unique within your project and the file in which it is created must have the same name.</p>
+<p>The <code>extends</code> keyword means we are inheriting from the Controller class</p>
+<p>All the other content goes inside of it.</p>
+<div class="codehilite"><pre><span></span>class Pages extends Controller {
+  ...
+}
 </pre></div>
 
-<p>Add the remote repository link</p>
-<div class="codehilite"><pre><span></span>// If you are using https and have a public repository (uses port 443)
-git remote add origin https://url-to-your-repo
+</details>
+<details class="note"><summary>The constructor - setting the model</summary><p>In the class constructor we set the name of the model(s) we need to interact with. If you don't need a model, because your data is <strong>static</strong> - then you can omit this.</p>
+<p>You can also specify multiple models inside of the one controller, but we will look at that later on.</p>
+<p>The name of the model <strong>MUST BE</strong> the same name as the model file name as it looks for the file name.</p>
+</details>
+<details class="note"><summary>The Action</summary><p>The actions are part of the URL and since index is the default action, it will be needed for setting up controller only URLs.</p>
+<p>In the first part we setup all the data we need to get from our model(s), this are basically functions that request data from the database and save the result (an array) into a variable.</p>
+<p>These variables can hold anything - it doesn't have to be a function.</p>
+<p>The first part of the <code>view()</code> method is the link to the folder inside of the <strong>views</strong> folder and then the filename. The file name is the name of actual file in the views folder and has nothing to do with the name of the endpoint.</p>
+<p>The files may also be called template1, template2 etc.</p>
+<div class="codehilite"><pre><span></span>public function index() {
+    // Links to model
+    $people = $this-&gt;people-&gt;getAllPeople();
+    $title = $this-&gt;people-&gt;title();
+    $data = [];
 
-// If you are using https and have a private repository (uses port 443)
-git remote add origin https://token@username:url-to-your-repo
-
-// If you are using ssh (uses port 22)
-git remote add origin git@github.com:username/reponame
+    // Send data to View
+    $this-&gt;view(&#39;pages/index&#39;, $data = []);
+}
 </pre></div>
 
-<p>The link "https://url-to-your-repo" is the link to your github repository</p>
-</div>
-<p>Now you can go to <a href="http://localhost:8000">http://localhost:8000</a> (docker for (your OS)) or <a href="http://192.168.99.100:8000">http://192.168.99.100:8000</a> (docker toolbox in combination with VirtualBox) and you will see the following screen:</p>
-<p><img alt="php-no-model" src="../../../images/php-no-model.png" /></p>
+<p>The $data array (which must be included) is used to pass in all the variables you create to the view, so you may end up with something like </p>
+<p><div class="codehilite"><pre><span></span>$this-&gt;view(&#39;pages/index&#39;, $data = [$people, $title]);
+</pre></div>
+or just an empty array, which is passed down by default.</p>
+</details>
+<h2 id="the_model">The Model<a class="headerlink" href="#the_model" title="Permanent link">&para;</a></h2>
+<p>In the models folder, we have all our models. A model is the part that queries, sends and receives the data from the database.</p>
+<p>A model is usually closely associated with a controller, as far as the name goes, but:</p>
+<ul>
+<li>
+<p>It cannot be the same name - using an underscore in the name is enough.</p>
+</li>
+<li>
+<p>It should be descriptive of what you type of data you want, so it is easier to get to later.</p>
+</li>
+</ul>
+<p>The format of a model looks something like this to begin with:</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When using Docker Toolbox for windows, the URL will be <a href="http://192.168.99.100:8000">http://192.168.99.100:8000</a></p>
+<p class="admonition-title">A basic model</p>
+<p>class People {</p>
+<div class="codehilite"><pre><span></span>private $db;
+
+public function __construct() {
+    $this-&gt;db = new Database;
+}
+
+public function title() {
+    return &quot;Show All People&quot;;
+}
+
+public function getAllPeople() {
+    $this-&gt;db-&gt;query(&#39;SELECT * FROM tbl_people&#39;);
+    return $this-&gt;db-&gt;resultSet();
+}
+</pre></div>
+
+
+<p>}</p>
 </div>
+<p>Again these are not auto-generated, but you can just copy this code and modify it to what you need.</p>
+<p>Let's break it up into parts:</p>
+<details class="note"><summary>The model class</summary><p>The class contains all of the methods - it doesn't inherit from anyting.</p>
+<div class="codehilite"><pre><span></span>class People {
+  ...
+}
+</pre></div>
+
+</details>
+<details class="note"><summary>Link to Database</summary><p>The model is the part that communicates to the database, so it needs to setup a new instance of the object.</p>
+</details>
+<details class="note"><summary>The queries</summary><p>Below you will see 2 queries, one returns a string and the second one does a query to a database.</p>
+<div class="codehilite"><pre><span></span>public function title() {
+    return &quot;Show All People&quot;;
+}
+
+public function getAllPeople() {
+    $this-&gt;db-&gt;query(&#39;SELECT * FROM tbl_people&#39;);
+    return $this-&gt;db-&gt;resultSet();
+}
+</pre></div>
+
+</details>
+<details class="note"><summary>Query with a parameter</summary><p>Queries can be as complex as you require them to be, but and any parameters are binded into the query. They are not directly hard coded into it.</p>
+<p>For each paramter for a query query, you need to pass in the parameter as a php variable, since you do not know what the value will be at development time.</p>
+<p>Since we don't know the value, we need to sanitize these variables and we that with the <code>bind()</code> function.</p>
+<p>As you can see the parameter in the query is identified with a <code>:</code> and in the binding function it is mapped to the variable name.</p>
+<p>When doing a Select query, we then return the result as per normal, which gives an array - even if the array only has a single item in it.</p>
+<div class="codehilite"><pre><span></span>public function getSinglePerson($id) {
+    $this-&gt;db-&gt;query(&#39;SELECT * FROM tbl_people WHERE ID = :id&#39;);
+    $this-&gt;db-&gt;bind(&quot;:id&quot;, $id);
+    return $this-&gt;db-&gt;resultSet();
+}
+</pre></div>
+
+</details>
+<details class="note"><summary>INSERT / UPDATE / DELETE with a parameter</summary><p>For the C UD and type queries, we need to pass in paramters as and they work exactly the same</p>
+<div class="codehilite"><pre><span></span>public function addPerson($fn, $ln, $dob) {
+  $this-&gt;db-&gt;query(&#39;INSERT INTO  tbl_people (FNAME, LNAME, DOB) VALUES (:fn, :ln, :dob)&#39;);
+
+
+  $this-&gt;db-&gt;bind(&#39;:fn&#39;, $fn);
+  $this-&gt;db-&gt;bind(&#39;:ln&#39;, $ln);
+  $this-&gt;db-&gt;bind(&#39;:dob&#39;, $dob);
+
+  if($this-&gt;db-&gt;execute()) {
+      return true;
+  } else {
+      return false;
+  }
+}
+</pre></div>
+
+<p>As you can see we pass in 3 parameters and sanitize each of them. </p>
+<p>At the end, we check if the database was successfully changed by returning a simple true / false boolean.</p>
+</details>
+<h2 id="the_view">The View<a class="headerlink" href="#the_view" title="Permanent link">&para;</a></h2>
+<p>In the views folder we have all the templates. Now each of the view templates can be used multiple times and have a different way of processing the data coming in.</p>
+<div class="admonition hint">
+<p class="admonition-title">TIP =&gt; Example</p>
+<p>You may have a single template that has 2 columns, but how the data comes into those columns is different, therefore you need multiple versions of that one template.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">HINT =&gt; Use the controllers as folders</p>
+<p>To make it easier to find the templates to use for each controller, create a folder that has the name of the controller and put the template files that are needed for each controller in there.</p>
+</div>
+<p>You will need to the path to the view file in the controller:</p>
+<div class="admonition note">
+<div class="codehilite"><pre><span></span>$this-&gt;view(&#39;folder_name/view_template&#39;, $data = []);
+</pre></div>
+
+</div>
+<p>The view file, although it ends with a <strong>.php</strong> extension, most of it is HTML.</p>
+<p>The format of a model looks something like this to begin with:</p>
+<div class="admonition note">
+<p class="admonition-title">Format of View</p>
+<div class="codehilite"><pre><span></span>&lt;?php include(APPROOT . &quot;/views/includes/header.php&quot;); ?&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+
+&lt;/div&gt;
+
+&lt;?php include(APPROOT . &quot;/views/includes/footer.php&quot;); ?&gt;
+</pre></div>
+
+</div>
+<p>The <code>class="row"</code> is a reference to using bootstrap, but it could be anything.</p>
+<p>You will notice there are 2 files, a <strong>header.php</strong> and a <strong>footer.php</strong> file.</p>
+<p>I tend to put them in the a folder called <strong>includes</strong> which you can see from the path that is used.</p>
+<p>In the <strong>header.php</strong> file we include everything from the top <code>&lt;html&gt;</code> tag to the where the commonality of each page ends. </p>
+<p>So a header for a page could look like this:</p>
+<script src="https://gist.github.com/to-jk11/b6c2c64e72dac34e4332bcf24b9afda4.js"></script>
+
+<p>The <strong>footer.php</strong> file includes everything from where the first tag of a view ends and the common footer for each page starts.</p>
+<p>So a footer for a page could look like this</p>
+<script src="https://gist.github.com/to-jk11/c297e7ebf9468c9c637f8ba232b87565.js"></script>
                 
                   
                 

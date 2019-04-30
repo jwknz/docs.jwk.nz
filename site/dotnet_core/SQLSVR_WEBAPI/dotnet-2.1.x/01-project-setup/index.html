@@ -48,6 +48,12 @@
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/application.3020aac5.css">
       
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
       
     
     
@@ -69,7 +75,9 @@
     
   </head>
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="red">
   
     <svg class="md-svg">
       <defs>
@@ -166,7 +174,7 @@
 
   
 
-<a href="https://github.com/jwknz/docs.jwk.nz" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/jwknz/docs.jwk.nz/" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -213,7 +221,7 @@
 
   
 
-<a href="https://github.com/jwknz/docs.jwk.nz" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/jwknz/docs.jwk.nz/" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -263,11 +271,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      MSSQL SERVER WEB API
+      Dotnet WEB API
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        MSSQL SERVER WEB API
+        Dotnet WEB API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -325,6 +333,78 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      PHP
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        PHP
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/php/container_setup/install/" title="Setup Docker Container" class="md-nav__link">
+      Setup Docker Container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/php/mvc_framework/setup/" title="Setup MVC Framework" class="md-nav__link">
+      Setup MVC Framework
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/php/mvc_framework/how-it-works/" title="Folder Structure" class="md-nav__link">
+      Folder Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/php/mvc_framework/mvc/" title="How MVC Works" class="md-nav__link">
+      How MVC Works
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -352,6 +432,8 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/jwknz/docs.jwk.nz/edit/master/docs/dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/01-project-setup.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
                 
                 <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
 <p>In this project, we are going to look at how to build a webapi that connects to a MSSQL database.</p>
@@ -370,7 +452,7 @@
 <li>Git (which will give you git bash on Windows)</li>
 </ul>
 </div>
-<h1 id="create-a-new-project">Create a new project<a class="headerlink" href="#create-a-new-project" title="Permanent link">&para;</a></h1>
+<h1 id="create_a_new_project">Create a new project<a class="headerlink" href="#create_a_new_project" title="Permanent link">&para;</a></h1>
 <p>Not all of these steps are required, but they are useful and they will help you build a good API (and coding habits) - so treat them as if they are all required.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -438,7 +520,7 @@ But for this tutorial we are working with <a href="https://dotnet.microsoft.com/
 </ul>
 <p>Making regular commits allows you to revert back to previous version of your code if you make an error.</p>
 </div>
-<h1 id="setting-up-the-database">Setting up the database<a class="headerlink" href="#setting-up-the-database" title="Permanent link">&para;</a></h1>
+<h1 id="setting_up_the_database">Setting up the database<a class="headerlink" href="#setting_up_the_database" title="Permanent link">&para;</a></h1>
 <p>At the moment we have installed the dotnet sdk on our machine and this is the easiest since we can just run the <code>dotnet</code> commands from our terminal.</p>
 <p>However to run a MSSQL Server you will either need to go through a tedious installation process, if you are on a Windows machine or else you are out of luck.</p>
 <p>That is until Microsoft embraced the world of containers and allows us to install it as part of a docker container.</p>
@@ -457,7 +539,7 @@ But for this tutorial we are working with <a href="https://dotnet.microsoft.com/
 <p>If all of the stuff above went well, you now have your development environment setup. We will talk about setting up the production side of things later, but let's write some code ...</p>
 </div>
 <p><img alt="Let's Code" src="https://memegenerator.net/img/instances/42970028/enough-talk-lets-code.jpg" /></p>
-<h1 id="populating-our-database-with-some-data">Populating our Database with some data<a class="headerlink" href="#populating-our-database-with-some-data" title="Permanent link">&para;</a></h1>
+<h1 id="populating_our_database_with_some_data">Populating our Database with some data<a class="headerlink" href="#populating_our_database_with_some_data" title="Permanent link">&para;</a></h1>
 <p>We now need to open our project in our code editor, so type in:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># if you are already in your project folder</span>
 code .
@@ -491,7 +573,7 @@ code &lt;projectname&gt;
 <p class="admonition-title">Warning</p>
 <p>The above steps assume your database is still running in the docker container. So if you have any errors, check that first by typing in <code>docker ps -a</code> into the terminal</p>
 </div>
-<h1 id="setup-ef-core-entity-framework">SETUP EF Core (Entity Framework)<a class="headerlink" href="#setup-ef-core-entity-framework" title="Permanent link">&para;</a></h1>
+<h1 id="setup_ef_core_entity_framework">SETUP EF Core (Entity Framework)<a class="headerlink" href="#setup_ef_core_entity_framework" title="Permanent link">&para;</a></h1>
 <p>Entity Framework is part of the dotnet family and allows for super easy integration of a database to an application, may it be web based or otherwise.</p>
 <p>There are 2 approaches you can take:<br />
 1) Code First or<br />
@@ -579,6 +661,19 @@ services.AddDbContext&lt;Rugby7Context&gt;(options =&gt; options
           Material for MkDocs</a>
       </div>
       
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/jwknz" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://github.com/to-jk11" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://www.linkedin.com/in/jwknz" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="https://twitter.com/jwknz" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

@@ -48,6 +48,12 @@
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/application.3020aac5.css">
       
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
       
     
     
@@ -69,7 +75,9 @@
     
   </head>
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="red">
   
     <svg class="md-svg">
       <defs>
@@ -166,7 +174,7 @@
 
   
 
-<a href="https://github.com/jwknz/docs.jwk.nz" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/jwknz/docs.jwk.nz/" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -213,7 +221,7 @@
 
   
 
-<a href="https://github.com/jwknz/docs.jwk.nz" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/jwknz/docs.jwk.nz/" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -263,11 +271,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      MSSQL SERVER WEB API
+      Dotnet WEB API
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        MSSQL SERVER WEB API
+        Dotnet WEB API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -325,6 +333,78 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      PHP
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        PHP
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/php/container_setup/install/" title="Setup Docker Container" class="md-nav__link">
+      Setup Docker Container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/php/mvc_framework/setup/" title="Setup MVC Framework" class="md-nav__link">
+      Setup MVC Framework
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/php/mvc_framework/how-it-works/" title="Folder Structure" class="md-nav__link">
+      Folder Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/php/mvc_framework/mvc/" title="How MVC Works" class="md-nav__link">
+      How MVC Works
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -352,11 +432,13 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/jwknz/docs.jwk.nz/edit/master/docs/dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/02-create-api.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
                 
                 <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
 <p>In this part we are going to look at creating a CRUD api that is connected MSSQL.</p>
 <p>This part will dive right into creating the api controller. So if you need to setup the project,read <a href="/dotnet_core/sqlsvr_webapi/dotnet-2.1.x/01-project-setup">part 1</a> first.</p>
-<h1 id="the-models">The Models<a class="headerlink" href="#the-models" title="Permanent link">&para;</a></h1>
+<h1 id="the_models">The Models<a class="headerlink" href="#the_models" title="Permanent link">&para;</a></h1>
 <p>When looking at creating an API, the design pattern closely follows the one of an MVC paradigm - but it doesn't include the V (View).</p>
 <p>We still have <strong>controllers</strong> and we still need <strong>models</strong> we created these in part 1.</p>
 <p>The main part to point out is that Models are normal POCO (plain old class objects) files, but only include properties - there are no methods, fields, constructors etc. of any kind in these files.</p>
@@ -372,10 +454,10 @@
 <li>Run the EF Scafholding command (in part 1)</li>
 </ol>
 </div>
-<h1 id="the-controller">The Controller<a class="headerlink" href="#the-controller" title="Permanent link">&para;</a></h1>
+<h1 id="the_controller">The Controller<a class="headerlink" href="#the_controller" title="Permanent link">&para;</a></h1>
 <p>The Controllers are the beasts in the api, they can be big complex files depending on the table structure you have in your database.</p>
 <p>Let's break down a few basics:</p>
-<h2 id="the-controller-name">The Controller Name<a class="headerlink" href="#the-controller-name" title="Permanent link">&para;</a></h2>
+<h2 id="the_controller_name">The Controller Name<a class="headerlink" href="#the_controller_name" title="Permanent link">&para;</a></h2>
 <p>Each Controller matches a <strong>single</strong> model - no more no less.</p>
 <p>Each Model is linked to a single table in the SQL database - no more no less.</p>
 <p>Each Controller inherites from the <code>ControllerBase</code> class, where the different Route routes are defined.</p>
@@ -445,7 +527,7 @@
 </div>
 <p>The only other thing that the controller contains are the routing methods - anything not related to the routing is not included in this class.</p>
 <p>Any helper methods should be included in a seperate class to keep things clean.</p>
-<h3 id="the-httpget-method">The HttpGet Method<a class="headerlink" href="#the-httpget-method" title="Permanent link">&para;</a></h3>
+<h3 id="the_httpget_method">The HttpGet Method<a class="headerlink" href="#the_httpget_method" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Demo Code</p>
 <div class="codehilite"><pre><span></span><span class="na">[HttpGet]</span>
@@ -464,7 +546,7 @@
 <p>You then just return the context with the model class convert it to a List</p>
 </li>
 </ul>
-<h3 id="the-single-id-httpget-method">The Single ID HttpGet Method<a class="headerlink" href="#the-single-id-httpget-method" title="Permanent link">&para;</a></h3>
+<h3 id="the_single_id_httpget_method">The Single ID HttpGet Method<a class="headerlink" href="#the_single_id_httpget_method" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Demo Code</p>
 <div class="codehilite"><pre><span></span><span class="na">[HttpGet(&quot;{id}&quot;)]</span>
@@ -490,7 +572,7 @@
 <p>If it does exist then return that object to the api user. Since we are only returning a single instance, we don't need to return it as a list.</p>
 </li>
 </ul>
-<h3 id="httppost-method">HttpPost Method<a class="headerlink" href="#httppost-method" title="Permanent link">&para;</a></h3>
+<h3 id="httppost_method">HttpPost Method<a class="headerlink" href="#httppost_method" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Demo Code</p>
 <div class="codehilite"><pre><span></span><span class="na">[HttpPost]</span>
@@ -517,7 +599,7 @@
 <p>The object details are returned to the api user</p>
 </li>
 </ul>
-<h3 id="httpput-method">HttpPut Method<a class="headerlink" href="#httpput-method" title="Permanent link">&para;</a></h3>
+<h3 id="httpput_method">HttpPut Method<a class="headerlink" href="#httpput_method" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Demo Code</p>
 <div class="codehilite"><pre><span></span><span class="na">[HttpPut(&quot;{id}&quot;)]</span>
@@ -562,7 +644,7 @@
 </li>
 </ul>
 </div>
-<h3 id="httpdelete-method">HttpDelete Method<a class="headerlink" href="#httpdelete-method" title="Permanent link">&para;</a></h3>
+<h3 id="httpdelete_method">HttpDelete Method<a class="headerlink" href="#httpdelete_method" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Demo Code</p>
 <div class="codehilite"><pre><span></span><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">IActionResult</span><span class="p">&gt;</span> <span class="n">DeleteTodoItem</span><span class="p">(</span><span class="kt">short</span> <span class="n">id</span><span class="p">)</span>
@@ -593,7 +675,7 @@
 <p>The api user gets a message</p>
 </li>
 </ul>
-<h2 id="general-notes">General Notes:<a class="headerlink" href="#general-notes" title="Permanent link">&para;</a></h2>
+<h2 id="general_notes">General Notes:<a class="headerlink" href="#general_notes" title="Permanent link">&para;</a></h2>
 <p>So that is all you need to do to create a simple api and because we use the entity framework, the <code>context</code> does all the heavy lifting for you.</p>
 <p>Even so - there a couple of things to note:</p>
 <ul>
@@ -639,6 +721,19 @@
           Material for MkDocs</a>
       </div>
       
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/jwknz" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://github.com/to-jk11" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://www.linkedin.com/in/jwknz" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="https://twitter.com/jwknz" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

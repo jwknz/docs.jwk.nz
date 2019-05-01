@@ -725,7 +725,7 @@ Password=yourStrong(*)Password;&quot; Microsoft.EntityFrameworkCore.SqlServer -o
 
 <p>In the <code>ConfigureServices</code> under the <code>services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);</code> line paste this:</p>
 <div class="codehilite"><pre><span></span>// Connect to DB
-string connection = &quot;ConnectionString&quot;: &quot;Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;&quot;;
+string connection = &quot;Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;&quot;;
 
 services.AddDbContext&lt;Rugby7Context&gt;(options =&gt; options
         .UseSqlServer(connection)

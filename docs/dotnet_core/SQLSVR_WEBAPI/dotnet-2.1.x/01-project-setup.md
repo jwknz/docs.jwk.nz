@@ -229,7 +229,7 @@ In the `ConfigureServices` under the `services.AddMvc().SetCompatibilityVersion(
 
 ```
 // Connect to DB
-string connection = "ConnectionString": "Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;";
+string connection = "Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;";
 
 services.AddDbContext<Rugby7Context>(options => options
         .UseSqlServer(connection)

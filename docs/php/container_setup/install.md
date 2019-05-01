@@ -7,13 +7,13 @@
 
     To create the docker folder do this:
 
-    1. type in cd `/c/users/<username>/`
+    1. type in cd `/c/Users/<username>/`
     2. create the docker folder `mkdir docker`
     3. go into the folder `cd docker`
 
     Once you have done this once, in the future you can simply go to the folder by typing in:
 
-    `cd /c/users/<username>/docker` 
+    `cd /c/Users/<username>/docker` (THIS IS CASE SENSITIVE)
 
 !!! warning "important"
     Stop any current containers you have going this will free up the ports that are in use:

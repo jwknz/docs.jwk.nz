@@ -67,7 +67,7 @@ The repository does not come with any of the remote packages installed - so let'
 
 ## Setup a user and structure for your database
 
-In a fresh bash shell (remmember that `+` you clicked) type in `mongo` and you will be presented with the mongo shell prompt (it is a `>` symbol)
+In a fresh bash shell (remmember that `+` you clicked) 
 
 You can then load the setup file that you find in the mongodb folder.
 

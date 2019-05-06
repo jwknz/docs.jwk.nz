@@ -11,7 +11,7 @@ FOLDER=MERN101
 Clone the following repository to get your setup
 
 ``` bash
-curl -LOk https://github.com/to-jk11/mern101-pg/archive/master.zip && unzip master.zip && rm -f  master.zip && mv php-container-kit-master $FOLDER
+curl -LOk https://github.com/to-jk11/mern101-pg/archive/master.zip && unzip master.zip && rm -f  master.zip && mv mern101-pg-master $FOLDER
 ```
 
 You should now have a folder called MERN101 (or whatever you called it and inside of there you should have the following folder structure:
@@ -48,7 +48,7 @@ After this you will need to trash any terminal sessions you have open to see the
 
 The repository does not come with any of the remote packages installed - so let's do that first.
 
-1. Go into the mern folder => `cd mern`
+1. Go into the mern folder => `cd react`
 2. Install node packages => `npm i`
 
 ## Start the Mongodb server

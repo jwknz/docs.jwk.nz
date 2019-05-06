@@ -219,7 +219,7 @@ The last part for our server is to add our API routes.
 
 ## Setting up our API CRUD endpoints
 
-Still in our express folder, create a new folder called routes and then another folder called api.
+Still in our express folder, create a new folder called routes and then inside of that folder create another folder called api.
 
 ``` bash
 mkdir -p express/api

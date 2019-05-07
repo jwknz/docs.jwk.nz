@@ -2,72 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://docs.jwk.nz/</loc>
-     <lastmod>2019-05-06</lastmod>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/dotnet_core/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/01-project-setup/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/02-create-api/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/03-exercise-01/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/04-testing-the-api/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/05-adding-a-web-form/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/mern/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/php/01-container-setup/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/php/mvc-framework/01-index/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/php/mvc-framework/02-setup/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/php/mvc-framework/03-how-it-works/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://docs.jwk.nz/php/mvc-framework/04-mvc/</loc>
+     <lastmod>2019-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.jwk.nz/php/mvc-framework/05-exercise-1/</loc>
+     <lastmod>2019-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.jwk.nz/php/mvc-framework/06-exercise-2/</loc>
+     <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

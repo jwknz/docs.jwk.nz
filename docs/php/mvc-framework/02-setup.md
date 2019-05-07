@@ -1,4 +1,4 @@
-## Setup MVC Project
+# Setup MVC Project
 
 !!! note "What you need"
     This repository should be loaded in the **www** folder if you are using the [https://github.com/to-jk11/php-container-kit/](https://github.com/to-jk11/php-container-kit/) repository

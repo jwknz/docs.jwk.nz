@@ -1,6 +1,6 @@
-# Introduction
+# Creating an API
 
-In this part we are going to look at creating a CRUD api that is connected MSSQL.
+In this part we are going to create a CRUD api that is connected MSSQL.
 
 This part will dive right into creating the api controller. So if you need to setup the project,read [part 1](/dotnet_core/sqlsvr_webapi/dotnet-2.1.x/01-project-setup) first.
 
@@ -8,7 +8,7 @@ This part will dive right into creating the api controller. So if you need to se
 
 When looking at creating an API, the design pattern closely follows the one of an MVC paradigm - but it doesn't include the V (View).
 
-We still have **controllers** and we still need **models** we created these in part 1.
+We still need to use **controllers** and we still need to use **models**, but we have already created those in part 1.
 
 The main part to point out is that Models are normal POCO (plain old class objects) files, but only include properties - there are no methods, fields, constructors etc. of any kind in these files.
 
@@ -28,6 +28,9 @@ In this file we have a method that creates our models, it reads the structure of
 # The Controller
 
 The Controllers are the beasts in the api, they can be big complex files depending on the table structure you have in your database.
+
+!!! note "Before you start"
+    Delete the controller that is already in the Controllers folder called **ValuesController.cs** We will create new controller files and if you overwrite this one, it may cause some unneccesary confusion.
 
 Let's break down a few basics:
 
@@ -62,9 +65,9 @@ Next up we need instantiate the model context that matches the controller:
 
 !!! note "Setting up the context"
     ``` C#
-    private readonly Rugby7Context _context;
+    private readonly <Name-of-Context> _context;
 
-    public PlayersController(Rugby7Context context)
+    public <Name-of-Controller>(<Name-of-Context> context)
     {
         _context = context;
     }
@@ -76,18 +79,114 @@ The only other thing that the controller contains are the routing methods - anyt
 
 Any helper methods should be included in a seperate class to keep things clean.
 
+## Creating a controller
+
+In Visual Studio (the big IDE) controllers are easy to create, by right clicking on your project and click `add > new file`. You then select that you want to add a Controller and name it accordingly.
+
+In Visual Studio Code the process is a bit more manual, but not difficult.
+
+Inside the controller folder create a file name it as the controller you want to create:
+
+`NameController.cs` for example `PlayersController.cs`
+
+Next add the following code inside this file:
+
+``` C#
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+namespace SQLSVR_WEBAPI.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    class NameController : ControllerBase
+    {
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<MODEL>>> GetMODEL()
+        {
+            return await _context.MODEL.ToListAsync();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<MODEL>> GetMODEL(long id)
+        {   
+            MODEL item = await _context.MODEL.FindAsync(id);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            return item;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<MODEL>> PostMODEL(MODEL item)
+        {
+            _context.MODEL.Add(item);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(
+              nameof(GetMODEL), 
+              item);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutMODELItem,(short id, MODEL item)
+        {
+            if (id != item.id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(item).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return Content("MODEL has been updated");
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteMODELItem(short id)
+        {
+            MODEL model = await _context.MODEL.FindAsync(id);
+
+            if (model == null)
+            {
+                return NotFound();
+            }
+
+            _context.MODEL.Remove(model);
+            await _context.SaveChangesAsync();
+
+            return Content("Model has been removed");
+        }
+    }
+}
+```
+
+Where ever it says Model in the code above, replace it with the name of the model that this controller matches.
+
+You will also need to resolve all the namespaces and import any that are required to run the controller. Don't worry - Visual Studio is very good at pointing them out to you :smile:
+
+Let's have a look what each of the methods mean in more detail.
+
 ### The HttpGet Method
 
 !!! note "Demo Code"
     ``` C#
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Players>>> GetPlayers()
+    public async Task<ActionResult<IEnumerable<MODEL>>> GetMODEL()
     {
-        return await _context.Players.ToListAsync();
+        return await _context.MODEL.ToListAsync();
     }
     ```
 
-* The `HttpGet` is the simplest of all, you define that you want a method that returns `IEnumerable<ModelName>` and call it give it a meaningful name like: `GetPlayers()`
+* The `HttpGet` is the simplest of all, you define that you want a method that returns `IEnumerable<ModelName>` and call it give it a meaningful name like: `GetModels()`
 
 * You then just return the context with the model class convert it to a List
 
@@ -96,9 +195,9 @@ Any helper methods should be included in a seperate class to keep things clean.
 !!! note "Demo Code"
     ``` C#
     [HttpGet("{id}")]
-    public async Task<ActionResult<Players>> GetPlayer(long id)
-    {
-      Players item = await _context.Players.FindAsync(id);
+    public async Task<ActionResult<MODEL>> GetMODEL(long id)
+    {   
+        MODEL item = await _context.MODEL.FindAsync(id);
 
         if (item == null)
         {
@@ -118,14 +217,14 @@ Any helper methods should be included in a seperate class to keep things clean.
 !!! note "Demo Code"
     ``` C#
     [HttpPost]
-    public async Task<ActionResult<Players>> PostPlayer(Players item)
+    public async Task<ActionResult<MODEL>> PostMODEL(MODEL item)
     {
-        _context.Players.Add(item);
+        _context.MODEL.Add(item);
         await _context.SaveChangesAsync();
 
         return CreatedAtAction(
-          nameof(GetPlayers), 
-          item);
+            nameof(GetMODEL), 
+            item);
     }
     ```
 
@@ -141,9 +240,9 @@ Any helper methods should be included in a seperate class to keep things clean.
 !!! note "Demo Code"
     ``` C#
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutTodoItem(short id, Players item)
+    public async Task<IActionResult> PutMODELItem,(short id, MODEL item)
     {
-        if (id != item.PlayerId)
+        if (id != item.id)
         {
             return BadRequest();
         }
@@ -151,7 +250,7 @@ Any helper methods should be included in a seperate class to keep things clean.
         _context.Entry(item).State = EntityState.Modified;
         await _context.SaveChangesAsync();
 
-        return Content("Player has been updated");
+        return Content("MODEL has been updated");
     }
     ```
 
@@ -174,19 +273,20 @@ Any helper methods should be included in a seperate class to keep things clean.
 
 !!! note "Demo Code"
     ``` C#
-    public async Task<IActionResult> DeleteTodoItem(short id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteMODELItem(short id)
     {
-        Players player = await _context.Players.FindAsync(id);
+        MODEL model = await _context.MODEL.FindAsync(id);
 
-        if (player == null)
+        if (model == null)
         {
             return NotFound();
         }
 
-        _context.Players.Remove(player);
+        _context.MODEL.Remove(model);
         await _context.SaveChangesAsync();
 
-        return Content("Player has been removed");
+        return Content("Model has been removed");
     }
     ```
 
@@ -202,9 +302,12 @@ So that is all you need to do to create a simple api and because we use the enti
 
 Even so - there a couple of things to note:
 
-* the Get Methods, return data from the database, this will be in JSON format by default.
+* the Get Methods, return data from the database, this will be returned to the api user in JSON format by default.
 
 * the Post, Put and Delete method don't return anything by default, but you still need to inform the api user. For this we can use the `Content()` that takes string. 
 
-  * It would be nice to return a string that is formatted in JSON format, so use something like `"{msg: user has been updated}"`
+* It would be nice to return a string that is formatted in JSON format, so use something like `"{msg: user has been updated}"`
 
+**REMEMBER TO CHANGE ALL THE REFERENCES TO THE WORD "MODEL" TO THE ACTUAL MODEL YOU ARE MAKING THE CONTOLLER FOR**
+
+Next let's do some exercises!

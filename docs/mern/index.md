@@ -1,4 +1,4 @@
-# MERN101
+# Creating a Web Api using MERN
 
 ## Setup
 

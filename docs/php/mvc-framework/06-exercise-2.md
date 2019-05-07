@@ -1,4 +1,4 @@
-## Loading your database
+# Loading your database
 
 Create a **data.sql** file and place it in the **sql** folder.
 When you have created that file copy the following into it:

@@ -1,4 +1,4 @@
-## How to setup MVC
+# How to setup MVC
 
 Using this framework, setting up MVC is a pretty easy process.
 

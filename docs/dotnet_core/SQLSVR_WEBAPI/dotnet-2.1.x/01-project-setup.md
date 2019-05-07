@@ -1,4 +1,4 @@
-# Introduction
+# Project Setup
 
 In this project, we are going to look at how to build a webapi that connects to a MSSQL database.
 
@@ -16,18 +16,36 @@ So let's get started!
         * You will need to adjust your docker setup or Virtual Box docker VM to support 2GB of RAM to support the MSSQL Server
     * Git (which will give you git bash on Windows)
 
+??? attention "If you do not have docker installed"
+    Although the tutorial assumes you use docker, it is only used to run the MSSQL server.  
+    If you do not have this option, you will need to do the following:
+
+    * You need to use the Windows operating system
+    * Download and install [the express edition of MSSQL Server](https://go.microsoft.com/fwlink/?linkid=853017)
+
+    Your username and password will be whatever you set it to be during the setup process.  
+
 # Create a new project
 
-Not all of these steps are required, but they are useful and they will help you build a good API (and coding habits) - so treat them as if they are all required.
-
-!!! note
+!!! note "How to use the instructions"
 
     * When it says "Type in" it means type in the terminal  
     * The `<projectname>` is a placeholder - type in your own name, but do not type in the angle brackets
 
-Type in `git init <projectname>` to create a working directory with a git repository
+Not all of these steps are required, but they are useful and they will help you build a good API (and coding habits) - so treat them as if they are all required.
+
+!!! note "If you don't use git"
+    Git should be used to manage your code, it is industry standard and in a way the easiest way to manage your code.
+
+    The alternative is for you to keep copying your work into other folders. I am assuming you use git - so if you don't you will need to find your own work around.
+
+Open the Gitbash terminal (from here just reffered to as the terminal) and create your project.
+
+Navigate to your code folder, I have mine setup in my users directory - which is where it should be if you are using docker for toolbox, but otherwise anywhere will do.
+
+Type in `git init webapi` to create a working directory with a git repository
   
-Go into the folder by typing in `cd <projectname>`
+Go into the folder by typing in `cd webapi`
   
 Type in `dotnet --list-sdks` to check what versions of dotnet core you have installed on your machine. This is required to see if you need to install the version that this tutorial requires. You should see something like this:
 
@@ -49,7 +67,7 @@ For this tutorial we are going to focus on version **2.1.x**
 
 Next type in `dotnet new global` to create a **global.json** file that you can use to specify what version of dotnet core you will use for the project.
 
-* You will need to open this file in a code editor and change the version number to the version you have on your machine - I have 2.1.5
+* You will need to open this file in a code editor and change the version number to the version you have on your machine - I have 2.1.505
 
 !!! info "global.json"
     ``` json
@@ -62,11 +80,16 @@ Next type in `dotnet new global` to create a **global.json** file that you can u
 
 Save and close the file.
 
-Now you need to create your project, if you create it before the **global.json** change, you will create a project with the newest version and some of the instructions below may not work.
+Next create your project by typing in `dotnet new webapi -o api --no-https`
 
-To create your project type in `dotnet new webapi` to create a new webapi project
+We use the `--no-https` flag, because we are just going to be running this on our own machine. If you forget this option - the project will still work, but you will get a warning in your browser.
 
-Next you will need to create a **.gitignore** file since we don't want to push all our binary and non essential files into our repository.
+!!! note "Using different versions of the sdk"
+    If you create the project before the **global.json** change, you will create a project with the newest version and some of the instructions below may not work.
+
+    However if you want to run this project with a later version of dotnet you just need to be aware that you may need to fix up a few minor things later on.
+
+Next you will need to create a **.gitignore** file since we don't want to push all our binary and non essential files into our repository. 
 
 Open the  the [**.gitignore**][3] file from the official dotnet core repository and paste it into your **.gitignore** file.
 
@@ -84,9 +107,9 @@ If you see the a json string with:
     ]
     ```
 
-Then you have a working api project and we can start making the changes we need to connect it to a database.
+You now have a working api project and we can start making the changes we need to connect it to a database.
 
-!!! hint 
+!!! hint "Hint for git users"
     * Do an initial commit to your repository type in:  
     `git add .` followed by  
     `git commit -m "Initial Commit"`
@@ -97,9 +120,9 @@ Then you have a working api project and we can start making the changes we need 
 
 At the moment we have installed the dotnet sdk on our machine and this is the easiest since we can just run the `dotnet` commands from our terminal.
 
-However to run a MSSQL Server you will either need to go through a tedious installation process, if you are on a Windows machine or else you are out of luck.
+However to run a MSSQL Server you will either need to go through a tedious installation process, if you are on a Windows machine or else up until a year or so ago (end of 2017) you were out of luck.
 
-That is until Microsoft embraced the world of containers and allows us to install it as part of a docker container.
+Now Microsoft has embraced the world of containers and it allows us to install it as part of a docker container.
 
 So in your terminal (or docker-toolbox for windows git bash terminal) type the following in to download the 2017 version of MSSQL Server
 
@@ -110,37 +133,45 @@ docker pull mcr.microsoft.com/mssql/server:2017-latest-ubuntu
 After the download is complete type in:
 
 ```
-docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(*)Password' -e 'MSSQL_PID=Express' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu 
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(*)Password' -e 'MSSQL_PID=Express' -p 1433:1433 --name webapi_mssql -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu 
 ```
 
-The password is set to `yourStrong(*)Password` which is the default password with the ! changed into an * - needless to say, you should probably change this, but it would be bad if I document my passwords here :-)
+The password is set to `yourStrong(*)Password` which is the default password with the ! changed into an * - needless to say, you should probably change this, but it would be bad if I document my passwords here :smile:
 
 Once that you have run that command, you mssql server is up and running, so let's leave that sitting there for the moment.
+
+??? hint "MSSQL checks"
+    If you are running the MSSQL database in Docker, your docker setup needs to have at least 2GB of RAM allocated to it. By default Docker Toolbox only allocated 1Gb to the machine. To fix this do this:
+
+    `docker-machine stop` // this stops the docker machine
+
+    Change the amount of ram using the virtualbox GUI interface from 1024MB to 2048GB
+
+    `docker-machine start` // this starts the docker machine    
+
+    You can now start the database server by typing in:
+
+    `docker start webapi_mssql`
 
 !!! success
     If all of the stuff above went well, you now have your development environment setup. We will talk about setting up the production side of things later, but let's write some code ...
 
-![Let's Code](https://memegenerator.net/img/instances/42970028/enough-talk-lets-code.jpg)
-
 # Populating our Database with some data
 
-We now need to open our project in our code editor, so type in:
+We now need to open our project in our code editor. You should still be in your working directory (webapi) so just type in:
 
 ``` bash
 # if you are already in your project folder
 code .
-
-# if you are in its parent folder
-code <projectname>
 ```
 
 This will open the project in Visual Studio Code.
 
-Create a folder called **sql** and add 2 files to that folder, call the files **tables.sql** and **data.sql** respectively.
+Create a folder called **sql** add 2 files to that folder, call the files **tables.sql** and **data.sql** respectively.
 
 You can view a set of SQL files in the code repository the table structure can be found [here][4] and the data for part of the database can be found [here][5]
 
-[4]: https://github.com/to-jk11/SQLSVR-WEBAPI/blob/master/sql/tables-nofk.sql
+[4]: https://github.com/to-jk11/SQLSVR-WEBAPI/blob/master/sql/tables.sql
 
 [5]: https://github.com/to-jk11/SQLSVR-WEBAPI/blob/master/sql/data.sql
 
@@ -154,7 +185,7 @@ In any case, if you missed the prompt or it didn't happen, you can type this in 
 code --install-extension ms-mssql.mssql
 ```
 
-After the install is complete, you will need to connect vscode to your data base, which you can do like this:
+After the install is complete, you will need to connect vscode to your database, which you can do like this:
 
 <video src="https://d2ddoduugvun08.cloudfront.net/items/2Y0H1e0Z0w1h2z3p2U1l/vscode-setup-mssql-database-connection.mov" controls style="display: block;height: auto;width: 100%;">vscode-setup-mssql-database-connection.mov</video>
 
@@ -174,6 +205,19 @@ You should see the results of the queries pop up in the side pane on the right, 
 !!! warning
     The above steps assume your database is still running in the docker container. So if you have any errors, check that first by typing in `docker ps -a` into the terminal
 
+Once you have done these steps, you should run a test query on a table you have just created.
+
+Create a new sql file called **test.sql** can paste this code into it.
+
+```
+Use Rugby7db
+Go
+
+SELECT * FROM game_schedule;
+```
+
+You can then right-click on it and run the query. You should see a whole lot of data. If you don't something went wrong.
+
 # SETUP EF Core (Entity Framework)
 
 Entity Framework is part of the dotnet family and allows for super easy integration of a database to an application, may it be web based or otherwise.
@@ -184,7 +228,7 @@ There are 2 approaches you can take:
 
 Since we already have a database, let's look at the **Data First** option.
 
-Copy the `ItemGroup` tag below and paste it in the **.csproj** file of your project.
+Open the `api.csproj` file inside the api folder and replace the `ItemGroup` tag with the code below.
 
 !!! note 
     These packages are aligned to work with dotnet core 2.1.x, so these will need to be updated if you are using a newer version.
@@ -205,29 +249,27 @@ Copy the `ItemGroup` tag below and paste it in the **.csproj** file of your proj
 
 Type in `dotnet restore` to install the nuget packages.
 
-Create a folder called **Models** and then run this command to have it create all the models for you.
+Next we need to create models for the tables in the database, so create a folder called **Models** and then run this command to have it create all the models for you.
 
 !!! note
     You will need to change the credentials to suit your setup.
     The DB Context is related to the sql files above, this would obviously be different if you are working on your own project.
 
-    ```
-    dotnet ef dbcontext scaffold "
-    Server=localhost;
-    Database=Rugby7db;
-    User=sa;
-    Password=yourStrong(*)Password;" Microsoft.EntityFrameworkCore.SqlServer -o Models -f -c Rugby7Context 
+    ```bash tab="Using Docker Native"
+    dotnet ef dbcontext scaffold "Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;" Microsoft.EntityFrameworkCore.SqlServer -o Models -f -c Rugby7Context 
     ```
 
-In your **startup.cs** file, add this as your connection string 
+    ```bash tab="Using Docker Toolbox"
+    dotnet ef dbcontext scaffold "Server=192.168.99.100;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;" Microsoft.EntityFrameworkCore.SqlServer -o Models -f -c Rugby7Context 
+    ```
 
-```
-Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;
-```
+    ```bash tab="Using SQL EXPRESS"
+    dotnet ef dbcontext scaffold "Server=myServerAddress;Database=Rugby7db;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -f -c Rugby7Context 
+    ```
 
-In the `ConfigureServices` under the `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);` line paste this:
+In your **startup.cs** file, add the following as your connection string and place it in the `ConfigureServices` under the `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);` line paste this:
 
-```
+```bash tab="Using Docker Native"
 // Connect to DB
 string connection = "Server=localhost;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;";
 
@@ -235,6 +277,26 @@ services.AddDbContext<Rugby7Context>(options => options
         .UseSqlServer(connection)
 );
 ```
+
+```bash tab="Using Docker Toolbox"
+// Connect to DB
+string connection = "Server=192.168.99.100;Database=Rugby7db;User=sa;Password=yourStrong(*)Password;";
+
+services.AddDbContext<Rugby7Context>(options => options
+        .UseSqlServer(connection)
+);
+```
+
+```bash tab="Using SQL EXPRESS"
+// Connect to DB
+string connection = "Server=myServerAddress;Database=Rugby7db;Trusted_Connection=True;";
+
+services.AddDbContext<Rugby7Context>(options => options
+        .UseSqlServer(connection)
+);
+```
+
+![Let's Code](https://memegenerator.net/img/instances/42970028/enough-talk-lets-code.jpg)
 
 !!! success
     So now that the database and models are setup, we are able to get to coding the API.

@@ -1,4 +1,4 @@
-## APP : Models - Views - Controllers
+# APP : Models - Views - Controllers
 
 To know what we are working with, let's define what each of these files do.
 

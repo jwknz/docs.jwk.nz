@@ -19,27 +19,6 @@ theme:
     # feature:
     #     tabs: 'true'
 
-nav:
-    - Home: index.md
-    - Dotnet Core:
-        - WEB API with MSSQL:
-            - WEB API with MSSQL: /dotnet_core/SQLSVR_WEBAPI/
-            - Part 1 - Setup: /dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/01-project-setup/
-            - Part 2 - The API: /dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/02-create-api/
-            - Part 3 - Exercise: /dotnet_core/SQLSVR_WEBAPI/dotnet-2.1.x/03-exercises/
-    - PHP:
-        - PHP Basics:
-            - PHP Basics: /php/php_basics/
-        - MVC Framework:
-            - MVC Framework: /php/mvc_framework/
-            - Part 1 - Setup Docker Container: /php/container_setup/install/
-            - Part 2 - Setup MVC Framework: /php/mvc_framework/setup/
-            - Part 3 - Folder Structure: /php/mvc_framework/how-it-works/
-            - Part 4 - How MVC Works: /php/mvc_framework/mvc/
-            - EX 1 - Create MVC part 1: /php/mvc_framework/exercise-1/
-            - EX 2 - Create MVC part 2: /php/mvc_framework/exercise-2/
-    - Mern:
-        - Mern101: /mern/mern101/
 
 markdown_extensions:
   - markdown.extensions.admonition

@@ -99,12 +99,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using api.Models;
 
-namespace SQLSVR_WEBAPI.Controllers
+namespace api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    class NameController : ControllerBase
+    public class NameController : ControllerBase
     {
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MODEL>>> GetMODEL()

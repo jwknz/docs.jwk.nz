@@ -220,6 +220,9 @@ You can then right-click on it and run the query. You should see a whole lot of 
 
 # SETUP EF Core (Entity Framework)
 
+!!! note
+    This work is done inside of the **api** project folder, so in your terminal type in `cd api` so that you can the `dotnet` commands required.
+
 Entity Framework is part of the dotnet family and allows for super easy integration of a database to an application, may it be web based or otherwise.
 
 There are 2 approaches you can take:  

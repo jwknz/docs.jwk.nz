@@ -18,7 +18,7 @@ When the files are in the staging area, they are being setup to be committed int
 
 Once they are committed into the repository they are tracked and you will be able to see the changes from the previous commit.
 
-![Staging Stage](../assets/images/stagin-stage.png)
+![Staging Stage](../assets/images/staging-stage.png)
 
 # Commit Stage
 

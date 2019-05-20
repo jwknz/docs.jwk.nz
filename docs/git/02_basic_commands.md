@@ -26,6 +26,7 @@ As mentioned earlier, git is a linux command line tool - so we need to know some
 | `rm` | remove a file followed by the file name |
 | `rm -f` | force remove a file followed by the file name | 
 | `rm -rf` | force remove a folder followed by the folder name | 
+| `mv <source file/path> <destination file/path>` | Moving or Renaming files |
 
 # Basic git commands
 

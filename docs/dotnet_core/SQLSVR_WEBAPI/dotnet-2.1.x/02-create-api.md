@@ -138,7 +138,7 @@ namespace api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMODELItem,(short id, MODEL item)
+        public async Task<IActionResult> PutMODELItem(short id, MODEL item)
         {
             if (id != item.id)
             {

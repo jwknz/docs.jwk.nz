@@ -70,4 +70,4 @@ extra:
 #    - './scripts/external_links.js'
 
 extra_css:
-    - 'styles/style.css'
+    - styles/style.css

@@ -19,5 +19,5 @@ So these days we use something called CI - Continuous Integration - and we use t
 
 In this section we are going to look doing this with [Parceljs](https://parceljs.org) and a service called [Netlify](https://netlify.com).
 
-We are also going to be using [Github](https://github.com) and [npm](npmjs.org) modules to achieve our goal, since we are using web frameworks like bootstrap.
+We are also going to be using [Github](https://github.com) and [npm](https://npmjs.org) modules to achieve our goal, since we are using web frameworks like bootstrap.
 

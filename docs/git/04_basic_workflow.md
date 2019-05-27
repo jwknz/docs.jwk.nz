@@ -91,9 +91,10 @@ Since we can add and update files to a git repository, it would be useful if we 
 
 | Command | Description |
 | :--- |  :--- |
-| `git reset --soft <sha1 number>` | does not change any of your files, but goes back the referenced commit |
-| `git reset --mixed <sha1 number>` | changes the files in the staging area, but not the working directory |
-| `git reset --hard <sha1 number>` | changes the files in both the staging area and working directory |
+| `git reset --soft <sha1 number>` | does not change any of your files, but goes back the referenced commit (keeps the files in the staging tree) |
+| `git reset --mixed <sha1 number>` | changes the files in the working area |
+| `git reset <sha1 number>` | same as `git reset --mixed <sha1 number>` |
+| `git reset --hard <sha1 number>` | goes back to the referenced commit reverting back all changes |
 | `git checkout -- index.html` | Reverses the changes of a file to the most recent commit |
 | `git commit --amend` | Change the last commit message in a vim editor |
 | `git commit --amend -m "msg"` | Change the last commit message inline |

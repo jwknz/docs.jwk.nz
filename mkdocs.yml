@@ -69,5 +69,5 @@ extra:
 extra_css:
     - './styles/style.css'
 
-#extra_javascript:
-#    - './scripts/external_links.js'
+extra_javascript:
+    - './scripts/external_links.js'

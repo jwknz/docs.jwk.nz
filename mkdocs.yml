@@ -67,7 +67,7 @@ extra:
       link: 'https://twitter.com/jwknz'
 
 extra_css:
-    - './styles/style.css'
+    - './assets/styles/style.css'
 
 extra_javascript:
-    - './scripts/external_links.js'
+    - './assets/scripts/external_links.js'

@@ -68,3 +68,6 @@ extra:
 
 #extra_javascript:
 #    - './scripts/external_links.js'
+
+extra_css:
+    - 'styles/style.css'

@@ -12,3 +12,6 @@ To navigate your way through the different tutorials, follow the naviagtion in t
     and are free for you to learn from. 
 
     If I use some specific information from a site or person - I will credit them.
+
+
+I use GitHub for my repositories, so I will refer to GitHub by name, but if you use a service like BitBucket or GitLab, just exchange the details where relevant.

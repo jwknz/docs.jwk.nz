@@ -34,6 +34,42 @@ Navigate to your code folder where you want to store you project, this could be 
     cd /c/Users/<username>/docker
     ```
 
+!!! warning
+
+    When using Virtualbox, there are some extra settings you need to do before this works.
+
+    Use the docker-toolbox terminal to stop the docker-machine - type in:
+
+    * `docker-machine stop`
+
+    You can confirm that the VM has stopped by opening up the Virtualbox Window.
+
+    * Create a folder on your H: Drive - called docker
+
+    * Next open CMD prompt (not the docker toolbox terminal)
+
+    * Type in each of the following commands (or copy / paste them)
+
+    1. `C:`
+    2. `cd "Program Files\Oracle\Virtualbox"
+    3. `VBoxManage.exe sharedfolder add default --name "h/docker" --hostpath "\\?\h:\docker" --automount`
+    4. `VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root 1`
+    5. `VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/h/docker 1`
+
+    Close the CMD window and go back to the Docker Terminal Window
+
+    * Type in `docker-machine ssh default`
+
+    Next type in:
+
+    1. `sudo mkdir --parents /h/docker`
+    2. `sudo mount -t vboxsf h/docker /h/docker/`
+    3. `exit`
+
+    Now you can run the curl command below from your H: Drive.
+
+    For reference you can read up on it [here](https://blog.shahinrostami.com/2017/11/docker-toolbox-windows-7-shared-volumes/)
+
 Set a ENV Variable temporary for the folder name
 
 `FOLDER=<VALUE>` where <VALUE> = the name you want your project to be

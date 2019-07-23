@@ -15,26 +15,8 @@
 
     `cd /c/Users/<username>/docker` (THIS IS CASE SENSITIVE)
 
-!!! warning "important"
-    Stop any current containers you have going this will free up the ports that are in use:
 
-    ``` bash
-    docker stop $(docker ps -a)
-    ```
-
-    This won't delete them, but it will free up the ports that are used by any containers.
-
-Navigate to your code folder where you want to store you project, this could be your desktop or a designated folder.
-
-!!! note ""
-    ``` bash
-    cd ~/Desktop
-
-    // **REMEMBER IF YOU ARE USING DOCKER TOOLBOX FOR WINDOWS**
-    cd /c/Users/<username>/docker
-    ```
-
-!!! warning ""
+!!! warning "IF YOU ARE USING VIRTUALBOX!!!"
 
     When using Virtualbox, there are some extra settings you need to do before this works.
 
@@ -69,6 +51,29 @@ Navigate to your code folder where you want to store you project, this could be 
     Now you can run the curl command below from your H: Drive.
 
     For reference you can read up on it [here](https://blog.shahinrostami.com/2017/11/docker-toolbox-windows-7-shared-volumes/)
+
+    
+
+!!! warning "important"
+    Stop any current containers you have going this will free up the ports that are in use:
+
+    ``` bash
+    docker stop $(docker ps -a)
+    ```
+
+    This won't delete them, but it will free up the ports that are used by any containers.
+
+Navigate to your code folder where you want to store you project, this could be your desktop or a designated folder.
+
+!!! note ""
+    ``` bash
+    cd ~/Desktop
+
+    // **REMEMBER IF YOU ARE USING DOCKER TOOLBOX FOR WINDOWS**
+    cd /c/Users/<username>/docker
+    ```
+
+
 
 Set a ENV Variable temporary for the folder name
 

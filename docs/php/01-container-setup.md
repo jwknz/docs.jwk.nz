@@ -33,7 +33,7 @@
     * Type in each of the following commands (or copy / paste them)
 
     1. `C:`
-    2. `cd "Program Files\Oracle\Virtualbox"
+    2. `cd "Program Files\Oracle\Virtualbox"`
     3. `VBoxManage.exe sharedfolder add default --name "h/docker" --hostpath "\\?\h:\docker" --automount`
     4. `VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root 1`
     5. `VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/h/docker 1`
@@ -42,7 +42,7 @@
 
     Start up the VM again by typing in:
 
-    `docker-machine stop`
+    `docker-machine start`
 
     Access the VM by typing in:
     

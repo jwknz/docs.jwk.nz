@@ -900,14 +900,14 @@
 </ul>
 <ol>
 <li><code>C:</code></li>
-<li>`cd "Program Files\Oracle\Virtualbox"</li>
+<li><code>cd "Program Files\Oracle\Virtualbox"</code></li>
 <li><code>VBoxManage.exe sharedfolder add default --name "h/docker" --hostpath "\\?\h:\docker" --automount</code></li>
 <li><code>VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root 1</code></li>
 <li><code>VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/h/docker 1</code></li>
 </ol>
 <p>Close the CMD window and go back to the Docker Terminal Window</p>
 <p>Start up the VM again by typing in:</p>
-<p><code>docker-machine stop</code></p>
+<p><code>docker-machine start</code></p>
 <p>Access the VM by typing in:</p>
 <p><code>docker-machine ssh default</code></p>
 <p>Next type in:</p>

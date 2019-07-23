@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.37",
+  "version": "1.0.41",
   "description": "Documentation for repositories that I have made",
   "main": "index.js",
   "directories": {
@@ -26,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/jwknz/docs.jwk.nz/issues"
   },
-  "homepage": "https://github.com/jwknz/docs.jwk.nz#readme"
+  "homepage": "https://github.com/jwknz/docs.jwk.nz#readme",
+  "dependencies": {}
 }

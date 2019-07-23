@@ -40,7 +40,13 @@
 
     Close the CMD window and go back to the Docker Terminal Window
 
-    * Type in `docker-machine ssh default`
+    Start up the VM again by typing in:
+
+    `docker-machine stop`
+
+    Access the VM by typing in:
+    
+    `docker-machine ssh default`
 
     Next type in:
 
@@ -52,7 +58,7 @@
 
     For reference you can read up on it [here](https://blog.shahinrostami.com/2017/11/docker-toolbox-windows-7-shared-volumes/)
 
-    
+
 
 !!! warning "important"
     Stop any current containers you have going this will free up the ports that are in use:

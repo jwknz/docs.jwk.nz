@@ -34,7 +34,7 @@ Navigate to your code folder where you want to store you project, this could be 
     cd /c/Users/<username>/docker
     ```
 
-!!! warning
+!!! warning ""
 
     When using Virtualbox, there are some extra settings you need to do before this works.
 

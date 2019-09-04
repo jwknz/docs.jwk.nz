@@ -229,7 +229,7 @@ After the installs are complete, you will need to connect vscode to your databas
 
 Once you have the connection setup, go to the sql files and execute them:
 
-![run-this-file.png](../../../assets/images/run-this-file.png)
+![run-this-file.png](../../../../assets/images/run-this-file.png)
 
 Do this for the **post.sql** and then the **people.sql**
 

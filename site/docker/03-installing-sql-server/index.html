@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation for repositories that I have made">
       
       
-        <link rel="canonical" href="https://docs.jwk.nz/docker/installing-docker-toolbox/">
+        <link rel="canonical" href="https://docs.jwk.nz/docker/03-installing-sql-server/">
       
       
         <meta name="author" content="Jeffrey Kranenburg">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Installing docker toolbox - docs.jwk.nz</title>
+        <title>Setting up SQL Server using Docker - docs.jwk.nz</title>
       
     
     
@@ -93,6 +93,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#setting_up_sql_server_using_docker" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -115,7 +119,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Installing docker toolbox
+                Setting up SQL Server using Docker
               
             </span>
           
@@ -257,18 +261,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Installing docker toolbox" class="md-nav__link md-nav__link--active">
-      Installing docker toolbox
+  <li class="md-nav__item">
+    <a href="../01-installing-docker-toolbox/" title="Installing Docker Toolbox" class="md-nav__link">
+      Installing Docker Toolbox
     </a>
-    
   </li>
 
         
@@ -278,9 +275,59 @@
 
 
   <li class="md-nav__item">
-    <a href="../setup-virtualbox/" title="Setup virtualbox" class="md-nav__link">
-      Setup virtualbox
+    <a href="../02-setup-virtualbox/" title="02 setup virtualbox" class="md-nav__link">
+      02 setup virtualbox
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Setting up SQL Server using Docker
+      </label>
+    
+    <a href="./" title="Setting up SQL Server using Docker" class="md-nav__link md-nav__link--active">
+      Setting up SQL Server using Docker
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using_docker" title="Using docker" class="md-nav__link">
+    Using docker
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -313,27 +360,15 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../dotnet_core/" title="Dotnet Core" class="md-nav__link">
-      Dotnet Core
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
     
-    <label class="md-nav__link" for="nav-3-2">
+    <label class="md-nav__link" for="nav-3-1">
       SQLSVR WEBAPI
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
+      <label class="md-nav__title" for="nav-3-1">
         SQLSVR WEBAPI
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -358,13 +393,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2-2" type="checkbox" id="nav-3-2-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2" type="checkbox" id="nav-3-1-2">
     
-    <label class="md-nav__link" for="nav-3-2-2">
+    <label class="md-nav__link" for="nav-3-1-2">
       00 archive
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-2-2">
+      <label class="md-nav__title" for="nav-3-1-2">
         00 archive
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -377,13 +412,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2-2-1" type="checkbox" id="nav-3-2-2-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2-1" type="checkbox" id="nav-3-1-2-1">
     
-    <label class="md-nav__link" for="nav-3-2-2-1">
+    <label class="md-nav__link" for="nav-3-1-2-1">
       Dotnet 2.1.x
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
-      <label class="md-nav__title" for="nav-3-2-2-1">
+      <label class="md-nav__title" for="nav-3-1-2-1">
         Dotnet 2.1.x
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -466,13 +501,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2-3" type="checkbox" id="nav-3-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-3" type="checkbox" id="nav-3-1-3">
     
-    <label class="md-nav__link" for="nav-3-2-3">
+    <label class="md-nav__link" for="nav-3-1-3">
       01 dotnet 2.2.x
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-2-3">
+      <label class="md-nav__title" for="nav-3-1-3">
         01 dotnet 2.2.x
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -502,13 +537,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2-4" type="checkbox" id="nav-3-2-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-4" type="checkbox" id="nav-3-1-4">
     
-    <label class="md-nav__link" for="nav-3-2-4">
+    <label class="md-nav__link" for="nav-3-1-4">
       02 after setup
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-2-4">
+      <label class="md-nav__title" for="nav-3-1-4">
         02 after setup
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -534,30 +569,6 @@
   <li class="md-nav__item">
     <a href="../../dotnet_core/SQLSVR_WEBAPI/02-after-setup/03-exercise-01/" title="Exercises" class="md-nav__link">
       Exercises
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../dotnet_core/SQLSVR_WEBAPI/02-after-setup/04-testing-the-api/" title="Testing the api using VSCODE" class="md-nav__link">
-      Testing the api using VSCODE
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../dotnet_core/SQLSVR_WEBAPI/02-after-setup/05-adding-a-web-form/" title="Consuming the API" class="md-nav__link">
-      Consuming the API
     </a>
   </li>
 
@@ -1016,17 +1027,97 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using_docker" title="Using docker" class="md-nav__link">
+    Using docker
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/jwknz/docs.jwk.nz/edit/master/docs/docker/installing-docker-toolbox.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/jwknz/docs.jwk.nz/edit/master/docs/docker/03-installing-sql-server.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Installing docker toolbox</h1>
-                
-                
+                <h1 id="setting_up_sql_server_using_docker">Setting up SQL Server using Docker<a class="headerlink" href="#setting_up_sql_server_using_docker" title="Permanent link">&para;</a></h1>
+<h2 id="using_docker">Using docker<a class="headerlink" href="#using_docker" title="Permanent link">&para;</a></h2>
+<p>Once it is installed, you will need to start the program which will create the VM that you need to run docker.</p>
+<p><img alt="Setup01" src="../images/Setup10.png" /></p>
+<p><img alt="Setup01" src="../images/Setup11.png" /></p>
+<p>Once Docker has started you will need to pull down the image for SQL SERVER.</p>
+<div class="codehilite"><pre><span></span>docker pull mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+</pre></div>
+
+<p><img alt="Setup01" src="../images/Setup12.png" /></p>
+<p>You can see what images you have downloaded using the images command:</p>
+<div class="codehilite"><pre><span></span>docker images
+</pre></div>
+
+<p><img alt="Setup01" src="../images/Setup13.png" /></p>
+<p>Create and run the container using:</p>
+<div class="codehilite"><pre><span></span>docker run -e &#39;ACCEPT_EULA=Y&#39; -e &#39;SA_PASSWORD=&lt;YourStrong@Passw0rd&gt;&#39; -e &#39;MSSQL_PID=Express&#39; -p 1433:1433 --name webapi_mssql -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu 
+</pre></div>
+
+<p>and check the status of it using:</p>
+<div class="codehilite"><pre><span></span>docker ps -a
+</pre></div>
+
+<p>to see if it is running.</p>
+<p>In  the image below you may see that the container has an </p>
+<blockquote>
+<p>Exited (1) x seconds ago</p>
+</blockquote>
+<p><img alt="Setup01" src="../images/Setup14.png" /></p>
+<p>This means that you need to allocate more RAM to your VM - which needs at least 2GB allocated to it.</p>
+<p>Type in :</p>
+<div class="codehilite"><pre><span></span>docker-machine stop
+</pre></div>
+
+<p>and open Virtual box - and change the value to 2048 MB</p>
+<p><img alt="Setup01" src="../images/Setup15.png" /></p>
+<p><img alt="Setup01" src="../images/Setup16.png" /></p>
+<p>Then start the machine up again using:</p>
+<div class="codehilite"><pre><span></span>docker-machine start
+</pre></div>
+
+<p><img alt="Setup01" src="../images/Setup17.png" /></p>
+<p>Here is a summary of the commands and you can see that the container is up and running</p>
+<p><img alt="Setup01" src="../images/Setup18.png" /></p>
+<p>After this you can connect it to a SQL management program, below are some screenshots when using SQL Management Studio</p>
+<p><img alt="Setup01" src="../images/Setup19.png" /></p>
+<p><img alt="Setup01" src="../images/Setup20.png" /></p>
+<p>You can now use the docker CLI tool to manage your database as well.</p>
+<p><img alt="Setup01" src="../images/Setup21.png" /></p>
+<p><img alt="Setup01" src="../images/Setup22.png" /></p>
+<p><img alt="Setup01" src="../images/Setup23.png" /></p>
+<p><img alt="Setup01" src="../images/Setup24.png" /></p>
                 
                   
                 
@@ -1047,7 +1138,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../.." title="JWKNZ Docs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../02-setup-virtualbox/" title="02 setup virtualbox" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1056,19 +1147,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                JWKNZ Docs
+                02 setup virtualbox
               </span>
             </div>
           </a>
         
         
-          <a href="../setup-virtualbox/" title="Setup virtualbox" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../dotnet_core/SQLSVR_WEBAPI/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Setup virtualbox
+                Introduction
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

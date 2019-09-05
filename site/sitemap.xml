@@ -6,17 +6,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.jwk.nz/docker/installing-docker-toolbox/</loc>
+     <loc>https://docs.jwk.nz/docker/01-installing-docker-toolbox/</loc>
      <lastmod>2019-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.jwk.nz/docker/setup-virtualbox/</loc>
+     <loc>https://docs.jwk.nz/docker/02-setup-virtualbox/</loc>
      <lastmod>2019-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.jwk.nz/dotnet_core/</loc>
+     <loc>https://docs.jwk.nz/docker/03-installing-sql-server/</loc>
      <lastmod>2019-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -62,16 +62,6 @@
     </url>
     <url>
      <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/02-after-setup/03-exercise-01/</loc>
-     <lastmod>2019-09-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/02-after-setup/04-testing-the-api/</loc>
-     <lastmod>2019-09-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/02-after-setup/05-adding-a-web-form/</loc>
      <lastmod>2019-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>

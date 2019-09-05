@@ -218,7 +218,13 @@ code --install-extension mtxr.sqltools
 
 After the installs are complete, you will need to connect vscode to your database, which you can do like this:
 
+## USING DOCKER NATIVE
+
 <video src="https://d2ddoduugvun08.cloudfront.net/items/2e2o1g0w3q1e2N111m0r/SQL-SETUP.mov" controls style="display: block;height: auto;width: 100%;">SQL-SETUP.mov</video>
+
+## USING DOCKER TOOLBOX
+
+<video src="https://d2ddoduugvun08.cloudfront.net/items/292G0X1n2h1N1d2y0r2p/SQL-SETUP-W.mov" controls style="display: block;height: auto;width: 100%;">SQL-SETUP-W.mov</video>
 
 !!! note
     If you are using docker toolbox, then your docker containers are inside of a Virtualbox VM.  

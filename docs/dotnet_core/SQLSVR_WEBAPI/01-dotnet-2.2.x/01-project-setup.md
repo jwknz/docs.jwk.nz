@@ -180,9 +180,7 @@ This will open the project in Visual Studio Code.
 
 Create a folder called **sql** add 2 files to that folder, call the files **tables.sql** and **data.sql** respectively.
 
-You can view a set of SQL files in the **sourcefiles** folder which is [here].
-
-[4]: https://github.com/jwknz/docs.jwk.nz/tree/master/docs/dotnet_core/SQLSVR_WEBAPI/01-dotnet-2.2.x/sourcefiles
+You can view a set of SQL files in the **sourcefiles** folder which is [here](https://github.com/jwknz/docs.jwk.nz/tree/master/docs/dotnet_core/SQLSVR_WEBAPI/01-dotnet-2.2.x/sourcefiles).
 
 Copy the contents of the files into your project files.
 

@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.46",
+  "version": "1.0.47",
   "description": "Documentation for repositories that I have made",
   "main": "index.js",
   "directories": {

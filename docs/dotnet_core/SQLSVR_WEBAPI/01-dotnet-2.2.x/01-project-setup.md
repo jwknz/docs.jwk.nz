@@ -182,7 +182,7 @@ Create a folder called **sql** add 2 files to that folder, call the files **tabl
 
 You can view a set of SQL files in the **sourcefiles** folder which is [here].
 
-[4]: /dotnet_core/SQLSVR_WEBAPI/dotnet-2.2.x/sourcefiles/
+[4]: https://github.com/jwknz/docs.jwk.nz/tree/master/docs/dotnet_core/SQLSVR_WEBAPI/01-dotnet-2.2.x/sourcefiles
 
 Copy the contents of the files into your project files.
 

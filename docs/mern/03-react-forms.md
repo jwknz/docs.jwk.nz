@@ -220,3 +220,13 @@ Now when you run your react app, you should be able to add a name in the text fi
 On the next page, we will look at how to update and delete content.
 
 **TODO:** Add more detail into explaining how the components work.
+
+**Reference LINKS:**
+
+* http://localhost:3000/
+* http://localhost:5000/
+* https://react-bootstrap.github.io/getting-started/introduction/
+* https://getbootstrap.com/docs/4.3/components/forms/
+* https://www.npmjs.com/package/uuid
+* https://blog.logrocket.com/how-to-use-bootstrap-with-react-a354715d1121/
+* https://docs.jwk.nz/

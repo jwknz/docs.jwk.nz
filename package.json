@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.49",
+  "version": "1.0.50",
   "description": "Documentation for repositories that I have made",
   "main": "index.js",
   "directories": {
@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "mkdocs serve",
-    "deploy": "mkdocs build && npm version patch --no-git-tag-version && git add -A && git commit -m 'Updated Site' && git push origin master"
+    "deploy": "mkdocs build && npm version patch --no-git-tag-version && git add -A && git commit -m 'Updated Site' && git push origin master",
+    "switchkeys": "ssh-add -D && ssh-add ~/.ssh/github_jwknz"
   },
   "repository": {
     "type": "git",

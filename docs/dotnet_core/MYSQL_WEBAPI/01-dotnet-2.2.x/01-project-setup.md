@@ -1,6 +1,6 @@
 # Project Setup
 
-In this project, we are going to look at how to build a webapi that connects to a MSSQL database.
+In this project, we are going to look at how to build a webapi that connects to a MYSQL database.
 
 The idea (and use case) for this api is to be able to connect any (1 or more) application(s) to a database on a remote or local server without having to store any sensitive information within the application itself.
 

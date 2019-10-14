@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.0284f74d.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.30686662.css">
       
-        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.01803549.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -185,7 +185,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -952,10 +952,46 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
     
     <label class="md-nav__link" for="nav-7-3">
-      Mvc framework
+      Debugging
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-7-3">
+        Debugging
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../php/debugging/01-setup/" title="PHP Debugging" class="md-nav__link">
+      PHP Debugging
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-4" type="checkbox" id="nav-7-4">
+    
+    <label class="md-nav__link" for="nav-7-4">
+      Mvc framework
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-4">
         Mvc framework
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1278,7 +1314,7 @@ But for this tutorial we are working with <a href="https://dotnet.microsoft.com/
 <div class="codehilite"><pre><span></span>docker run -e &#39;ACCEPT_EULA=Y&#39; -e &#39;SA_PASSWORD=&lt;YourStrong@Passw0rd&gt;&#39; -e &#39;MSSQL_PID=Express&#39; -p 1433:1433 --name webapi_mssql -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu 
 </pre></div>
 
-<p>The password is set to <code>&lt;YourStrong@Passw0rd&gt;</code> which is the default password - needless to say, you should probably change this, but it would be bad if I document my passwords here <img alt="😄" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f604.svg" title=":smile:" /></p>
+<p>The password is set to <code>&lt;YourStrong@Passw0rd&gt;</code> which is the default password - needless to say, you should probably change this, but it would be bad if I document my passwords here :smile:</p>
 <details class="tip"><summary>Change Database password</summary><blockquote>
 <p>The password should follow the SQL Server default password policy, otherwise the container can not setup SQL server and will stop working. By default, the password must be at least 8 characters long and contain characters from three of the following four sets: Uppercase letters, Lowercase letters, Base 10 digits, and Symbols.</p>
 </blockquote>
@@ -1532,7 +1568,7 @@ services.AddDbContext&lt;Rugby7Context&gt;<span class="o">(</span><span class="n
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.245445c6.js"></script>
+      <script src="../../../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
       

@@ -96,3 +96,94 @@ dotnet ef dbcontext scaffold "Server=localhost;Database=postdb;User=root;" Pomel
 ![Setup](images/Setup29.png)
 
 
+# Basic Contoller
+
+```
+namespace People.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class PeopleController : Controller
+    {
+        private readonly PostDBContext _context;
+
+        public PeopleController(PostDBContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<TblPeople>>> GetTblPeople()
+        {
+            
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<TblPeople>> GetTblPeople(int id)
+        {   
+
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<TblPeople>> PostTblPeople(TblPeople item)
+        {
+
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutTblPeopleItem(short id, TblPeople item)
+        {
+
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteTblPeopleItem(int id)
+        {
+
+        }
+    }
+}
+```
+
+# Connection String
+
+```
+{
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=localhost;Database=postdb;User=root;"
+    },
+    "Logging": {
+    "IncludeScopes": false,
+    "LogLevel": {
+        "Default": "Warning"
+    }
+  }
+}
+```
+
+# Add to Startup.cs
+
+```
+public Startup(IHostingEnvironment env)
+{
+    var builder = new ConfigurationBuilder()
+        .SetBasePath(env.ContentRootPath)
+        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+        .AddEnvironmentVariables();
+    Configuration = builder.Build();
+}
+```
+
+Put this in the `ConfigureServices(IServiceCollection services)` method:
+
+```
+services.AddDbContext<PostDBContext>( 
+options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), // replace with your Connection String
+    mySqlOptions =>
+    {
+        mySqlOptions.ServerVersion(new Version(5, 7, 20), ServerType.MySql); // replace with your Server Version and Type
+    }
+));
+````
+
+If all goes well - your api should run now.

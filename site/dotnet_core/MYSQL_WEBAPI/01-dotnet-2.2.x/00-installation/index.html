@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.0284f74d.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.30686662.css">
       
-        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.01803549.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -185,7 +185,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -952,10 +952,46 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
     
     <label class="md-nav__link" for="nav-7-3">
-      Mvc framework
+      Debugging
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-7-3">
+        Debugging
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../php/debugging/01-setup/" title="PHP Debugging" class="md-nav__link">
+      PHP Debugging
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-4" type="checkbox" id="nav-7-4">
+    
+    <label class="md-nav__link" for="nav-7-4">
+      Mvc framework
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-4">
         Mvc framework
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1216,6 +1252,89 @@ dotnet add package Microsoft.Extensions.Configuration.UserSecrets --version 2.2.
 <p><img alt="Setup" src="../images/Setup23.png" /></p>
 <p><img alt="Setup" src="../images/Setup24.png" /></p>
 <p><img alt="Setup" src="../images/Setup29.png" /></p>
+<h1 id="basic_contoller">Basic Contoller<a class="headerlink" href="#basic_contoller" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span>namespace People.Controllers
+{
+    [Route(&quot;api/[controller]&quot;)]
+    [ApiController]
+    public class PeopleController : Controller
+    {
+        private readonly PostDBContext _context;
+
+        public PeopleController(PostDBContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        public async Task&lt;ActionResult&lt;IEnumerable&lt;TblPeople&gt;&gt;&gt; GetTblPeople()
+        {
+
+        }
+
+        [HttpGet(&quot;{id}&quot;)]
+        public async Task&lt;ActionResult&lt;TblPeople&gt;&gt; GetTblPeople(int id)
+        {   
+
+        }
+
+        [HttpPost]
+        public async Task&lt;ActionResult&lt;TblPeople&gt;&gt; PostTblPeople(TblPeople item)
+        {
+
+        }
+
+        [HttpPut(&quot;{id}&quot;)]
+        public async Task&lt;IActionResult&gt; PutTblPeopleItem(short id, TblPeople item)
+        {
+
+        }
+
+        [HttpDelete(&quot;{id}&quot;)]
+        public async Task&lt;IActionResult&gt; DeleteTblPeopleItem(int id)
+        {
+
+        }
+    }
+}
+</pre></div>
+
+<h1 id="connection_string">Connection String<a class="headerlink" href="#connection_string" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span>{
+    &quot;ConnectionStrings&quot;: {
+        &quot;DefaultConnection&quot;: &quot;Server=localhost;Database=postdb;User=root;&quot;
+    },
+    &quot;Logging&quot;: {
+    &quot;IncludeScopes&quot;: false,
+    &quot;LogLevel&quot;: {
+        &quot;Default&quot;: &quot;Warning&quot;
+    }
+  }
+}
+</pre></div>
+
+<h1 id="add_to_startupcs">Add to Startup.cs<a class="headerlink" href="#add_to_startupcs" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span>public Startup(IHostingEnvironment env)
+{
+    var builder = new ConfigurationBuilder()
+        .SetBasePath(env.ContentRootPath)
+        .AddJsonFile(&quot;appsettings.json&quot;, optional: false, reloadOnChange: true)
+        .AddEnvironmentVariables();
+    Configuration = builder.Build();
+}
+</pre></div>
+
+<p>Put this in the <code>ConfigureServices(IServiceCollection services)</code> method:</p>
+<p>```
+services.AddDbContext<PostDBContext>( 
+options =&gt; options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), // replace with your Connection String
+    mySqlOptions =&gt;
+    {
+        mySqlOptions.ServerVersion(new Version(5, 7, 20), ServerType.MySql); // replace with your Server Version and Type
+    }
+));
+````</p>
+<p>If all goes well - your api should run now.</p>
                 
                   
                 
@@ -1302,7 +1421,7 @@ dotnet add package Microsoft.Extensions.Configuration.UserSecrets --version 2.2.
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.245445c6.js"></script>
+      <script src="../../../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
       

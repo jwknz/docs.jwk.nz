@@ -31,7 +31,7 @@ xdebug.remote_enable = 1
 xdebug.remote_autostart=on
 ```
 
-Safe the file and restart the apache server in the XAMPP control panel.
+Save the file and restart the apache server in the XAMPP control panel.
 
 The first part is now setup, next we need to setup vscode - but that is in the next section.
 

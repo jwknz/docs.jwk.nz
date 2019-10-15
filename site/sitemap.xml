@@ -2,217 +2,217 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://docs.jwk.nz/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/docker/01-installing-docker-toolbox/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/docker/02-setup-virtualbox/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/docker/03-installing-sql-server/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/dotnet_core/MYSQL_WEBAPI/01-dotnet-2.2.x/00-installation/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/dotnet_core/MYSQL_WEBAPI/01-dotnet-2.2.x/01-project-setup/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/00-archive/dotnet-2.1.x/01-project-setup/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/00-archive/dotnet-2.1.x/02-create-api/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/00-archive/dotnet-2.1.x/03-exercise-01/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/00-archive/dotnet-2.1.x/04-testing-the-api/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/00-archive/dotnet-2.1.x/05-adding-a-web-form/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/01-dotnet-2.2.x/01-project-setup/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/02-after-setup/02-create-api/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/dotnet_core/SQLSVR_WEBAPI/02-after-setup/03-exercise-01/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/git/00_Installing_git/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/git/01_what_is_git/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/git/02_basic_commands/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/git/03_how_does_git_work/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/git/04_basic_workflow/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/git/05_basic_workflow_images/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/git/06_branches/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/git/07_gitignore/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/git/08_exercises/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/git/09_faqs/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/mern/01-index/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/mern/02-quick-setup/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/mern/03-react-forms/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/package_managers/npm/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/php/01-container-setup/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/php/api-with-jwt/01-project-setup/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/php/debugging/01-setup/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/php/mvc-framework/01-index/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/php/mvc-framework/02-setup/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/php/mvc-framework/03-how-it-works/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/php/mvc-framework/04-mvc/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/php/mvc-framework/05-exercise-1/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/php/mvc-framework/06-exercise-2/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/web/01-introduction/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/web/02-setting-up-project/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/web/03-push-and-deploy/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/web/04-parcel/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.jwk.nz/web/05-exercises/</loc>
-     <lastmod>2019-10-15</lastmod>
+     <lastmod>2019-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

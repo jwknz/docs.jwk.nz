@@ -1206,7 +1206,7 @@
 <p>Under the instructions page, it tells you to download a file - save that file into C:\xampp\php\ext</p>
 <p>Next open up the php.ini file that inside of C:\xampp\php folder using vscode and paste the following code at the bottom of it:</p>
 <div class="codehilite"><pre><span></span>[xDebug]
-zend_extension = php_xdebug-2.7.2-7.3-vc15-x86_64.dll
+zend_extension = php_xdebug-2.7.2-7.2-vc15.dll
 xdebug.remote_enable = 1
 xdebug.remote_autostart=on
 </pre></div>
@@ -1284,8 +1284,11 @@ services:
 <p>Once the setup above has been completed, you need to configure the debug area in vscode.</p>
 <p>First we need to install the php debug extension:</p>
 <div class="codehilite"><pre><span></span>code --install-extension felixfbecker.php-debug
+code --install-extension felixfbecker.php-intellisense
+code --install-extension bmewburn.vscode-intelephense-client
 </pre></div>
 
+<p>Another way to get these is to type in PHP in the extension tab and install the first 3 extensions that pop up.</p>
 <p>Next you need to update the launch.json file so that your working directory is linked to the debugger</p>
 <details class="note"><summary>USING XAMPP</summary><div class="codehilite"><pre><span></span>{
     &quot;version&quot;: &quot;0.2.0&quot;,
@@ -1311,6 +1314,13 @@ services:
 </pre></div>
 
 </details>
+<p><strong>FOR XAMPP USERS</strong></p>
+<p>Last thing is to set the PHP path. So create a <code>settings.json</code> file inside of the <code>.vscode</code> folder and add this to it:</p>
+<div class="codehilite"><pre><span></span>{
+  &quot;php.executablePath&quot;: &quot;C:\\xampp\\php\\php.exe&quot;
+}
+</pre></div>
+
 <details class="note"><summary>USING DOCKER</summary><div class="codehilite"><pre><span></span>{
   &quot;version&quot;: &quot;0.2.0&quot;,
   &quot;configurations&quot;: [
